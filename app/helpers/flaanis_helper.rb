@@ -1,0 +1,2 @@
+module FlaanisHelper
+end
