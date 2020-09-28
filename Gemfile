@@ -61,3 +61,7 @@ group :production do
 end
 #ユーザー機能用Gem
 gem 'devise'
+
+#画像保存用のGem2つ
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
