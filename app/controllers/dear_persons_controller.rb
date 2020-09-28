@@ -1,0 +1,2 @@
+class DearPersonsController < ApplicationController
+end
