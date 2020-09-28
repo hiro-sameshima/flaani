@@ -1,6 +1,20 @@
 dear_person#new
 <%= form_with model:@dear_person, url: dear_persons_path, local: true do |form| %>
   <%# フォームの内部 %>
+   <%# 出品画像 %>
+    <div class="">
+      <div class="">
+        大切な人の写真
+        <span class="">必須</span>
+      </div>
+      <div class="">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= form.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /出品画像 %>
   <%# １つのフォーム始まり %>
   <div class="one-input-parts">
     <div class="">
