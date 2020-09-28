@@ -1,0 +1,14 @@
+ <%= link_to "マイページを編集する", edit_user_registration_path%>
+<ul class=''>
+<%# １つのdear_person %>
+  <li class=''>
+  <% @dear_persons.each do  |person| %>
+    <%= link_to dear_person_path(person.id) do %>
+    <%= image_tag  person.image.variant(resize:'500x500'), class:''%>
+    <%= person.nick_name%>
+    <%= person.birthday%>
+    <%= person.anniversary%>
+      <%end%>
+  <%end%>
+  </li>
+</ul>
