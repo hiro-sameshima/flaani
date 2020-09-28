@@ -1,4 +1,9 @@
 class DearPersonsController < ApplicationController
+
+  def index
+    @dear_persons = DearPerson.all
+  end
+
   def new
     @dear_person = DearPerson.new  
   end
@@ -18,6 +23,20 @@ class DearPersonsController < ApplicationController
   def show
     @dear_person = DearPerson.find(params[:id])
   end
+
+  def edit
+    @dear_person = DearPerson.find(params[:id])
+  end
+
+  def update
+    @dear_person = DearPerson.find(params[:id])
+    if @dear_person.update(dear_person_params)
+      redirect_to root_path
+    else
+      render 'edit' # バリデーションに弾かれた時
+    end
+  end
+
   private
 
   def dear_person_params

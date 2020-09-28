@@ -6,3 +6,7 @@
 <%= @dear_person.last_name_kana %>
 <%= "#{@dear_person.birthday.month}月#{@dear_person.birthday.day}日" %>
 <%= "#{@dear_person.anniversary.month}月#{@dear_person.anniversary.day}日" %>
+
+
+<%= link_to '編集する', edit_dear_person_path(@dear_person.id), method: :get, class:''%>
+<%= link_to '削除する', dear_person_path(@dear_person.id), method: :delete, class:'' %>

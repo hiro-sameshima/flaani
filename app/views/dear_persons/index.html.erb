@@ -1,0 +1,10 @@
+<ul class=''>
+<%# １つのdear_person %>
+ <% @dear_persons.each do  |person| %>
+  <%= link_to dear_person_path(person.id) do %>
+  <%= image_tag  person.image.variant(resize:'500x500'), class:''%>
+    <%end%>
+ <%end%>
+<li class=''>
+</li>
+</ul>
