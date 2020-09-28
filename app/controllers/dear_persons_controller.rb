@@ -37,6 +37,11 @@ class DearPersonsController < ApplicationController
     end
   end
 
+  def destroy
+    dear_person = DearPerson.find(params[:id])
+    dear_person.destroy
+      redirect_to root_path
+end
   private
 
   def dear_person_params
