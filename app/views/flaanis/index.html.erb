@@ -2,7 +2,7 @@ flaani#index
 <% if user_signed_in? %>
   <div class="">
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <%= link_to current_user.name,edit_user_registration_path , class: "post" %>
+    <%= link_to current_user.name, dear_persons_path , class: "post" %>
   </div>
 <% else %>
   <div class="">
@@ -13,7 +13,7 @@ flaani#index
 
 <% if user_signed_in? %>
   <div class="">
-    <%= link_to "大切な人", dear_persons_path, class: "post" %>
+    <%= link_to "大切な人", new_dear_person_path, class: "post" %>
   
   </div>
 <% else %>

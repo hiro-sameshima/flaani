@@ -2,6 +2,7 @@ class DearPersonsController < ApplicationController
 
   def index
     @dear_persons = DearPerson.all
+    @user = User.find(current_user[:id])
   end
 
   def new
@@ -10,7 +11,6 @@ class DearPersonsController < ApplicationController
 
   def create
     @dear_person = DearPerson.new(dear_person_params)
-    binding.pry
     if @dear_person.valid?
       
       @dear_person.save  # バリデーションをクリアした時 
