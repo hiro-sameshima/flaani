@@ -53,7 +53,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+# binding.pry導入
+gem 'pry-rails'
 group :production do
 #Heroku用に静的アセットファイルやログの保存先を微調整するGem
   gem 'rails_12factor'
