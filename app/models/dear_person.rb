@@ -1,0 +1,2 @@
+class DearPerson < ApplicationRecord
+end
