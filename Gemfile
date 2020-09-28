@@ -65,3 +65,6 @@ gem 'devise'
 #画像保存用のGem2つ
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
+
+# S３に保存する
+gem "aws-sdk-s3", require: false
