@@ -55,10 +55,14 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # binding.pry導入
 gem 'pry-rails'
+
 group :production do
 #Heroku用に静的アセットファイルやログの保存先を微調整するGem
   gem 'rails_12factor'
+#Unicornの導入しアプリケーションサーバーを起動
+  gem 'unicorn', '5.4.1'
 end
+
 #ユーザー機能用Gem
 gem 'devise'
 
