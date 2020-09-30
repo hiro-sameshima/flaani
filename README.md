@@ -27,7 +27,7 @@ Things you may want to cover:
 
 # テーブル設計
 
-## store_users テーブル
+## florist テーブル
 
 | Column           | Type    | Options     |
 | ---------------- | ------- | ----------- |
