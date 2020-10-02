@@ -132,4 +132,4 @@ ActiveRecord
 
 ### Active::Hash
 prefecture
-delivery_time_id
+delivery_time_id 
