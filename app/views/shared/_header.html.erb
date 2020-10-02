@@ -1,0 +1,31 @@
+<header class="header-lower-fixed">
+        <div class="heading">
+            <%= link_to image_tag("logo.png", class:"header-logo"), root_path %>
+            <nav class="global-nav">
+              <ul>
+                <li>
+                    <%= link_to 'WHAT FLAANI?',"", method: :get, class: "nav-list" %>
+                </li>
+                <li>
+                    <%= link_to 'FLORISTS',"#", method: :get, class: "nav-list" %>
+                </li>
+                <li>
+                    <%= link_to 'SERVISE',"#", method: :get, class: "nav-list" %>
+                </li>
+                <% if user_signed_in? %><%#ログインしていたら表示される%>
+                    <%= link_to 'LOGOUT',destroy_user_session_path, method: :delete, class: "nav-list" %>
+                <li>
+                    <%= link_to current_user.name,"dear_persons_path", method: :post, class: "nav-list font-little-up" %>
+                </li>
+                <% else %><%#ログインしていなかったら以下が表示される%>
+                <li>
+                    <%= link_to 'LOGIN',new_user_session_path, method: :post, class: "nav-list" %>
+                </li>
+                <li>
+                    <%= link_to 'SIGN UP',new_user_registration_path, method: :get, class: "nav-list" %>
+                </li>
+                <% end %>
+              </ul>
+            </nav>
+        </div>
+    </header>
