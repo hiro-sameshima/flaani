@@ -157,7 +157,7 @@ header{
   // バックグラウンド部分
   .background-space {
     height: 600px;
-    background-image: url('background-image.jpeg');
+    background-image: image-url("background-image.jpeg");
     background-position: center;
     background-color: bisque;
     background-size: cover;
@@ -187,7 +187,7 @@ header{
     .bright-style{
       width: 22vw;
       height: 72vh;
-      background-image: url('style-bright.png');
+      background-image: image-url('style-bright.png');
       background-position: right;
       background-color: bisque;
       background-size: cover;
@@ -197,7 +197,7 @@ header{
     .cute-style{
         width: 22vw;
         height: 72vh;
-        background-image: url('style-cute.png');
+        background-image: image-url('style-cute.png');
         background-position: center;
         background-color: bisque;
         background-size: cover;
@@ -216,7 +216,7 @@ header{
       .natural-style{
         width: 22vw;
         height: 72vh;
-        background-image: url('style-natural.png');
+        background-image: image-url('style-natural.png');
         background-position: left;
         background-size: cover;
         background-color: lightgreen;
@@ -237,7 +237,7 @@ footer {
   height: 100vh;
   width: 100vw;
   padding: 172px 0;
-  background-image: url('login-img.jpeg');
+  background-image: image-url('login-img.jpeg');
   background-position: center;
   background-size: cover;
   width: 600px;
