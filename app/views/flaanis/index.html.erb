@@ -1,39 +1,80 @@
-flaani#index
-<% if user_signed_in? %>
-  <div class="">
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <%= link_to current_user.name, dear_persons_path , class: "post" %>
-  </div>
-<% else %>
-  <div class="">
-    <%= link_to "ログイン", new_user_session_path, class: "post" %>
-    <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-  </div>
-<% end %>
+<%# トップコンテンツ %>
+<div class="top-contents">
+  <img src="/assets/top-image" alt="image-name">
+</div>
+<%# end トップコンテンツ %>
 
-<%# リンクボタン %>
-<% if user_signed_in? %>
-  <div class="">
-    <%= link_to "大切な人", new_dear_person_path, class: "post" %>
-  
+<%# メインコンテンツ %>
+<div class="main-contents">
+  <div class="main-contents-title">
+    <h3>記念日を覚えていますか？<h3>
   </div>
-<% else %>
   <div class="">
-    <%= link_to "大切な人を登録", new_dear_person_path, class: "post" %>
+    <p>大切な人の記念日を忘れがちなあなたのためにFlaaniがあります。
+日常は慌ただしく過ぎていきます。その１日に大切な人との記念日があります。
+Flaaniはそんな見落としたくない１日を忘れずにブーケを届けるサービスです。
+    </p>
   </div>
-<% end %>
-<%# リンクボタン終わり %>
-<%# 花屋さん部分 %>
-florist
-  <% if florist_signed_in? %>
-  <div class="">
-    <%= link_to "ログアウト", destroy_florist_session_path, method: :delete %>
-    <%= link_to current_florist.shop_name, root_path, class: "post" %>
+</div>
+<%# endメインコンテンツ %>
+
+<%# ミドルコンテンツ %>
+<div class="middle-contents">
+  <div class="middle-contents-inner">
+    <div class="left-content">
+      <div class="left-content-title">
+        <h3>Flaani</h3>
+      </div>
+      <div class=left-content-Description>
+        <p>Flaaniは毎月少しの金貨を払うことで設定した記念日に素敵なブーケを届けます。
+まずは１人、大切な人を登録しましょう。</p>
+      </div>
+        <div class="btn-left">
+        <%=link_to '大切な人を登録', root_path, class:"btn btn-left" %>
+        </div>
+    </div>
+    <div class="right-content">
+          <div class="right-content-title">
+        <h3>Florists</h3>
+      </div>
+      <div class=right-content-Description>
+        <p>日々花に魂を吹き込む職人。
+それがあなたの大切な人へ届くブーケを束ねるFlaaniのFloristsです。Flaani加盟には厳格な基準があります。
+Floristは皆、厳しいテストをパスしています。安心してFlaaniを利用して欲しいからです。</p>
+      </div>
+        <div class="btn-right">
+          <%=link_to 'Floristを探す', root_path, class:"btn btn-right" %>
+        </div>
+    </div>
   </div>
-<% else %>
-  <div class="">
-    <%= link_to "ログイン", new_florist_session_path, class: "post" %>
-    <%= link_to "新規登録", new_florist_registration_path, class: "post" %>
   </div>
-<% end %>
-<%# 花屋さん部分end %>
+<%# endミドルコンテンツ %>
+
+<%# バックグラウンド部分 %>
+<div class="background-space">
+</div>
+<%# endバックグラウンド部分 %>
+
+<%# スタイル紹介部分 %>
+<div class="styles-contents">
+  <div class="style-contents-inner">
+    <div class="style-title">
+      <h3 class="style-title">選択を簡単に</h3>
+    </div>
+    <div class="style-container">
+      <div class="bright-style"></div>
+      <div class="cute-style"></div>
+      <div class="cool-style"></div>
+      <div class="natural-style"></div>
+    </div>
+    <div class="style-Description">
+      <p>Flaaniは4つのスタイルから選ぶだけでfloristが季節のお花を使って素敵なブーケを束ねてくれます。プランはいつでも変更可能です。
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<%# endスタイル紹介部分 %>
+
+

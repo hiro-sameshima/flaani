@@ -6,17 +6,63 @@
     <%= csp_meta_tag %>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
      <link rel="stylesheet" href="./css/style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-      <header class="header">
-      <div class="">
-    <%= link_to image_tag("logo.png", class:"furima-icon"), root_path %>
-
-      </div>
+      <header class="header-lower-fixed">
+        <div class="heading">
+            <%= link_to image_tag("logo.png", class:"header-logo"), root_path %>
+            <nav class="global-nav">
+              <ul>
+                <li>
+                    <%= link_to 'WHAT FLAANI?',"", method: :get, class: "nav-list" %>
+                </li>
+                <li>
+                    <%= link_to 'FLORISTS',"#", method: :get, class: "nav-list" %>
+                </li>
+                <li>
+                    <%= link_to 'SERVISE',"#", method: :get, class: "nav-list" %>
+                </li>
+                <% if user_signed_in? %><%#ログインしていたら表示される%>
+                    <%= link_to 'LOGOUT',destroy_user_session_path, method: :delete, class: "nav-list" %>
+                <li>
+                    <%= link_to current_user.name,"dear_persons_path", method: :post, class: "nav-list font-little-up" %>
+                </li>
+                <% else %><%#ログインしていなかったら以下が表示される%>
+                <li>
+                    <%= link_to 'LOGIN',new_user_session_path, method: :post, class: "nav-list" %>
+                </li>
+                <li>
+                    <%= link_to 'SIGN UP',new_user_registration_path, method: :get, class: "nav-list" %>
+                </li>
+                <% end %>
+              </ul>
+            </nav>
+        </div>
     </header>
     <%= yield %>
+    <footer>
+      <div class="footer-content">
+      <%# 花屋さん部分 %>
+        <% if florist_signed_in? %>
+        <div class="">
+          <%= link_to "ログアウト", destroy_florist_session_path, method: :delete %>
+          <%= link_to current_florist.shop_name, root_path, class: "post" %>
+        </div>
+        <% else %>
+        <div class="">
+          <%= link_to "ログイン", new_florist_session_path, class: "post" %>
+          <%= link_to "新規登録", new_florist_registration_path, class: "post" %>
+        </div>
+        <% end %>
+        <%# 花屋さん部分end %>
+      </div>
+      <p>
+        Copyright Flaani 2020.
+      </p>
+    </footer>
   </body>
 </html>

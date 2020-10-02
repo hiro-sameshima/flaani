@@ -1,3 +1,217 @@
 // Place all the styles related to the flaanis controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// メインのフォントカラー
+$main-color : #333;
+
+// メインの白系フォントカラー
+$wight-color : #fff;
+
+// ヘッダーの下部固定用クラス
+.header-lower-fixed {
+  position: fixed;
+}
+
+// ボタンの基礎設定
+.btn {
+  width: 80px;
+  height: 32px;
+  padding: 16px 8px;
+  background-color: #FF3333;
+  border-radius: 4px;
+  color: #fff;
+  
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  color: $main-color;
+  background-color: #fff;
+}
+a {
+  text-decoration: none;
+}
+
+// ヘッダー部分のCSS
+header{
+  width: 100vw;
+  height: 80px;
+  background-color: antiquewhite;
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-logo {
+    max-width: 12vw;
+    min-width: 100px;
+  }
+  ul {
+    display: flex;
+  }
+  li {
+    margin: 0 3vw;
+    min-width: 10px;
+  }
+  .nav-list {
+    color: $main-color;
+  }
+}
+
+// トップ部分の表示
+.top-contents {
+  height: 100vh;
+  img {
+    width: 100vw;
+  }
+}
+
+
+// メインコンテンツ部分
+.main-contents {
+  height: 100vh;
+  text-align: center;
+  padding: 0 96px;
+  .main-contents-title {
+    margin-top: 88px;
+  }
+  h3 {
+    margin: 160px 0;
+    font-size: 3rem;
+  }
+    p {
+      font-size: 2rem;
+    }
+}
+
+
+
+// ミドルコンテンツ部分
+.middle-contents {
+  height: 1200px;
+  .middle-contents-inner{
+    margin: 0 96px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .left-content{
+    margin-top: 16px;
+    padding: 0 16px;
+    width: 480px;
+    height: 720px;
+    background-color: #e3e3e3;
+    color: #ff6666;
+    h3 {
+      font-size: 3rem;
+      margin: 64px 0 32px;
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 40px;
+    }
+    .btn-left{
+      margin-top: 80px;
+    }
+  }
+  .right-content{
+      margin-top: 200px;
+      padding: 0 16px;
+      width: 480px;
+      height: 720px;
+      background-color: #FFCCCC;
+      color: #fff;
+      h3 {
+        font-size: 3rem;
+        margin: 64px 0 32px;
+      }
+      p {
+        font-size: 1.5rem;
+        line-height: 40px;
+      }
+        .btn-right {
+          margin-top: 80px;
+        }
+    }
+    
+  }
+  
+  
+  // バックグラウンド部分
+  .background-space {
+    height: 600px;
+    background-image: url('background-image.jpeg');
+    background-position: center;
+    background-color: bisque;
+    background-size: cover;
+    opacity: 0.8;
+    background-attachment: fixed;
+  }
+  
+  
+  // スタイルコンテンツ部分
+  .styles-contents {
+    height: 1200px;
+    .style-contents-inner {
+      margin: 160px 96px 0 ;
+      height: 880px;
+    }
+    .style-title {
+      height: 130px;
+      background-color: gold;
+    }
+    h3{
+      text-align: right;
+      font-size: 3em;
+    }
+    .style-container{
+      display: flex;
+    }
+    .bright-style{
+      width: 22vw;
+      height: 72vh;
+      background-image: url('style-bright.png');
+      background-position: right;
+      background-color: bisque;
+      background-size: cover;
+      margin-top: 8vh;
+      
+    }
+    .cute-style{
+        width: 22vw;
+        height: 72vh;
+        background-image: url('style-cute.png');
+        background-position: center;
+        background-color: bisque;
+        background-size: cover;
+        margin-top: 16vh;
+      }
+      .cool-style{
+        width: 22vw;
+        height: 72vh;
+        background-image: url('style-cool.png');
+        background-position: right;
+        background-color: bisque;
+        background-size: cover;
+        margin-top: 24vh;
+
+      }
+      .natural-style{
+        width: 22vw;
+        height: 72vh;
+        background-image: url('style-natural.png');
+        background-position: left;
+        background-size: cover;
+        background-color: lightgreen;
+        margin-top: 32vh;
+      }
+}
+
+// フッター部分
+footer {
+  height: 100px;
+  background-color: lightslategray;
+  text-align: center;
+}
