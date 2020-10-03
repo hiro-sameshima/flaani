@@ -92,6 +92,7 @@ Things you may want to cover:
 | Column       | Type       | Options                        |
 | ------------ | ---------  | ------------------------------ |
 | price        | references | foreign_key: true, null: false |
+| user         | refereces  | foreign_key: true, null: false |
 | dear_person  | refereces  | foreign_key: true, null: false |
 
 ### Association
