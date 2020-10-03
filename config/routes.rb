@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root  'flaanis#index'
   resources :flaanis
-  resources :dear_persons
-  resources :plans
-  resources :users, only: [:show] #動いていない
+  resources :dear_persons do
+    resources :plans
+  end
 end

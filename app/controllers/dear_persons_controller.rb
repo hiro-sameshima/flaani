@@ -1,4 +1,5 @@
 class DearPersonsController < ApplicationController
+
   def index
     @dear_persons = DearPerson.all
     @user = User.find(current_user[:id])

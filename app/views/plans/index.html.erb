@@ -1,2 +1,45 @@
-<h1>Plans#index</h1>
-<p>Find me in app/views/plans/index.html.erb</p>
+<%= render "shared/second.header"%>
+<div class="login-field">
+  <div class="login-forms">
+    <p class="field">プランを登録</p>
+      <%= form_with model:@plan, url: dear_person_plans_path, local: true do |form| %>
+      <%# フォームの内部 %>
+  <%# プランテーブル部分 %>
+  <%# １つのフォーム始まり %>
+  <div class="one-input-parts">
+    <div class="field">
+      プランを選んでください
+      <span class="indispensable">必須</span>
+    </div> 
+    <%= form.select :style,
+       [
+         ["Bright",'bright'],
+           ["Cute",'cute'], 
+           ["Cool",'cool'], 
+           ["Natural",'natural']
+       ],prompt: "プランを選択してください"%>
+  </div>
+  <%# １つのフォーム終わり %>
+
+  <%# １つのフォーム始まり %>
+      <span class="indispensable">必須</span>
+    </div> 
+    <%= form.select :price,
+       [
+         ["1度だけ配達する¥5000プラン",'5000'],
+           ["3年間お届けする¥15000プラン",'15000'], 
+           ["10年間お届けする¥50000プラン",'50000']
+       ],prompt: "お届けする回数を選択してください"%>
+  </div>
+  <%# １つのフォーム終わり %>
+  <%# プランテーブル部分終わり %>
+
+<%# お届けす先テーブル部分 %>
+ 
+  <div class=''>
+    <%= form.submit "登録" ,class:"btn" %>
+  </div>
+  <% end %>
+  </div>
+  <%= "#{@dear_person.nick_name}さんのプラン"%>
+</div>
