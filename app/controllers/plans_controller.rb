@@ -5,7 +5,7 @@ class PlansController < ApplicationController
   end
 
   def create
-    @plan = Plan.create(plan_params)
+    @plan = PlanAddress.create(plan_params)
     if @plan.valid?
       @plan.save  # バリデーションをクリアした時
       redirect_to root_path
