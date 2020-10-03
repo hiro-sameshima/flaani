@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   root  'flaanis#index'
   resources :flaanis
   resources :dear_persons
+  resources :users, only: [:show] #動いていない
 end
