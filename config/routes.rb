@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'plans/index'
   devise_for :florists, controllers: {
     sessions:      'florists/sessions',
     passwords:     'florists/passwords',
