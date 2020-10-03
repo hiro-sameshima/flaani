@@ -1,3 +1,5 @@
+ <%= render "shared/second.header"%>
+ <%= link_to "大切な人を登録する",  new_dear_person_path%>
  <%= link_to "マイページを編集する", edit_user_registration_path%>
 <ul class=''>
 <%# １つのdear_person %>
@@ -12,3 +14,4 @@
   <%end%>
   </li>
 </ul>
+<%= render "users/shared/links" %>

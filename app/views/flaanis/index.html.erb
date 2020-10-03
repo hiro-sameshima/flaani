@@ -2,7 +2,7 @@
 <%# トップコンテンツ %>
 <div class="top-contents">
   <%= image_tag asset_path('top-image.jpg') %>
-  <%# <img src="/assets/top-image" alt="image-name"> %>
+ 
 </div>
 <%# end トップコンテンツ %>
 
@@ -17,6 +17,7 @@
 Flaaniはそんな見落としたくない１日を忘れずにブーケを届けるサービスです。
     </p>
   </div>
+ <%=link_to '大切な人を登録',  new_dear_person_path, class:"btn btn-left" %>
 </div>
 <%# endメインコンテンツ %>
 
@@ -32,7 +33,7 @@ Flaaniはそんな見落としたくない１日を忘れずにブーケを届�
 まずは１人、大切な人を登録しましょう。</p>
       </div>
         <div class="btn-left">
-        <%=link_to '大切な人を登録', root_path, class:"btn btn-left" %>
+        <%=link_to '大切な人を登録',  new_dear_person_path, class:"btn btn-left" %>
         </div>
     </div>
     <div class="right-content">
