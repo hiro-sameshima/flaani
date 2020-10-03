@@ -1,23 +1,26 @@
-dear_person#new
-<%= form_with model:@dear_person, url: dear_persons_path, local: true do |form| %>
-  <%# フォームの内部 %>
-   <%# 出品画像 %>
-    <div class="">
+<%= render "shared/second.header"%>
+<div class="login-field">
+  <div class="login-forms">
+    <p class="field">大切な人を登録</p>
+      <%= form_with model:@dear_person, url: dear_persons_path, local: true do |form| %>
+      <%# フォームの内部 %>
+      <%# 画像登録 %>
       <div class="">
+        <div class="">
         大切な人の写真
         <span class="">必須</span>
-      </div>
+        </div>
       <div class="">
         <p>
           クリックしてファイルをアップロード
         </p>
         <%= form.file_field :image, id:"item-image" %>
       </div>
-    </div>
+  </div>
     <%# /出品画像 %>
   <%# １つのフォーム始まり %>
   <div class="one-input-parts">
-    <div class="">
+    <div class="field">
       名前を入力してください
       <span class="indispensable">必須</span>
     </div> 
@@ -27,7 +30,7 @@ dear_person#new
 
   <%# １つのフォーム始まり %>
   <div class="one-input-parts">
-    <div class="">
+    <div class="field">
       名字を入力してください
       <span class="indispensable">必須</span>
     </div> 
@@ -38,7 +41,7 @@ dear_person#new
 
   <%# １つのフォーム始まり %>
   <div class="one-input-parts">
-    <div class="">
+    <div class="field">
       名字のカナ入力してください
       <span class="indispensable">必須</span>
     </div> 
@@ -92,6 +95,8 @@ dear_person#new
   </div>
   <%# １つのフォーム終わり %>
   <div class=''>
-    <%= form.submit "登録" ,class:"" %>
+    <%= form.submit "登録" ,class:"btn" %>
   </div>
-<% end %>
+  <% end %>
+  </div>
+</div>
