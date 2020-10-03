@@ -72,6 +72,9 @@ end
 #ユーザー機能用Gem
 gem 'devise'
 
+#アクティブハッシュ
+gem 'active_hash'
+
 #画像保存用のGem2つ
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
