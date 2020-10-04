@@ -8,7 +8,6 @@ class PlansController < ApplicationController
     @plan = PlanAddress.new(plan_params)
     if @plan.valid?
       pay_item
-      # binding.pry
       @plan.save # バリデーションをクリアした時
       redirect_to root_path
     else
