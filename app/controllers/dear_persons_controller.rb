@@ -3,6 +3,7 @@ class DearPersonsController < ApplicationController
   def index
     @dear_persons = DearPerson.all
     @user = User.find(current_user[:id])
+    # @plan = Plan.find(params[:id])
   end
 
   def new
@@ -22,6 +23,7 @@ class DearPersonsController < ApplicationController
 
   def show
     @dear_person = DearPerson.find(params[:id])
+    # @plan = Plan.find(params[:id])
   end
 
   def edit

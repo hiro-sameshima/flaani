@@ -1,3 +1,3 @@
 class Payment < ApplicationRecord
-  belongs_to :plan
+  belongs_to :plan ,optional: true
 end

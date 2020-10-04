@@ -72,6 +72,9 @@ end
 #ユーザー機能用Gem
 gem 'devise'
 
+# PAY.JP
+gem 'payjp'
+
 #アクティブハッシュ
 gem 'active_hash'
 
