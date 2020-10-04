@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_30_021912) do
+ActiveRecord::Schema.define(version: 2020_10_03_002458) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,20 @@ ActiveRecord::Schema.define(version: 2020_09_30_021912) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "postal_code", null: false
+    t.string "city", null: false
+    t.string "house_number", null: false
+    t.string "building_name", null: false
+    t.string "phone_number", null: false
+    t.integer "prefecture_id", null: false
+    t.integer "delivery_time_id", null: false
+    t.bigint "dear_person_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dear_person_id"], name: "index_addresses_on_dear_person_id"
   end
 
   create_table "dear_people", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -60,6 +74,23 @@ ActiveRecord::Schema.define(version: 2020_09_30_021912) do
     t.index ["reset_password_token"], name: "index_florists_on_reset_password_token", unique: true
   end
 
+  create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "price", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
+  create_table "plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "price", null: false
+    t.string "style", null: false
+    t.bigint "dear_person_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dear_person_id"], name: "index_plans_on_dear_person_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -74,5 +105,8 @@ ActiveRecord::Schema.define(version: 2020_09_30_021912) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "addresses", "dear_people"
   add_foreign_key "dear_people", "users"
+  add_foreign_key "payments", "users"
+  add_foreign_key "plans", "dear_people"
 end
