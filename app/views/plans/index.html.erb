@@ -2,8 +2,10 @@
 <div class="login-field">
   <div class="login-forms">
     <p class="field">プランを登録</p>
-      <%= form_with model:@plan, url: dear_person_plans_path, local: true do |form| %>
+      <%= form_with model:@plan, url: dear_person_plans_path,id: 'charge-form', local: true do |form| %>
       <%# フォームの内部 %>
+      <%# エラー表示 %>
+       <%= render 'shared/error_messages', model: @plan %>
       <%# プランテーブル部分 %>
       <%# １つのフォーム始まり %>
   <div class="one-input-parts">
@@ -58,9 +60,9 @@
       <span class="indispensable">必須</span>
     </div>
     <div class='input-expiration-date-wrap'>
-        <%= form.text_area :exp_month, id:"card-exp-month",class:"input-expiration-date", placeholder:"例)3" %>
+        <%= form.text_field :exp_month, id:"card-exp-month",class:"input-expiration-date", placeholder:"例)3" %>
         <p>月</p>
-        <%= form.text_area :exp_year, id:"card-exp-year",class:"input-expiration-date", placeholder:"例)23" %>
+        <%= form.text_field :exp_year, id:"card-exp-year",class:"input-expiration-date", placeholder:"例)23" %>
         <p>年</p>
     </div>
   </div>
@@ -138,3 +140,5 @@
   </div>
   </div> 
 </div>
+
+<%= render "shared/second.footer"%>

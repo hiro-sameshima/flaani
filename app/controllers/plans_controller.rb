@@ -5,8 +5,9 @@ class PlansController < ApplicationController
   end
 
   def create
-    @plan = PlanAddress.create(plan_params)
+    @plan = PlanAddress.new(plan_params)
     if @plan.valid?
+      pay_item
       @plan.save  # バリデーションをクリアした時
       redirect_to root_path
     else
@@ -24,4 +25,13 @@ class PlansController < ApplicationController
   def dear_person_set
     @dear_person = DearPerson.find(params[:dear_person_id])
  end
+
+ def pay_item
+  Payjp.api_key = ENV['PAYJP_SECRET_KEY'] # PAY.JPテスト秘密鍵
+  Payjp::Charge.create(
+    amount: @item.price,  # 商品の値段
+    card: params[:token],                      # カードトークン
+    currency: 'jpy'                             # 通貨の種類(日本円)
+  )
+end
 end
