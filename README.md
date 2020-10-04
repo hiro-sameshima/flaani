@@ -122,7 +122,7 @@ Things you may want to cover:
 - belongs_to :address
 
 
-### Oters
+### Oters 
 
 ActiveRecord
 | Column   | Type     | Options     |
