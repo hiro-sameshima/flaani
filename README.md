@@ -7,7 +7,7 @@
 
 
 
-<img width="1677" alt="スクリーンショット 2020-10-04 23 39 40" src="https://user-images.githubusercontent.com/64538711/95019490-95a3b500-06a0-11eb-9dd9-93a05494238e.png">
+<img width="1672" alt="スクリーンショット 2020-10-05 1 04 40" src="https://user-images.githubusercontent.com/64538711/95020558-ddc5d600-06a6-11eb-9892-448b724c5a19.png">
 <img width="1610" alt="スクリーンショット 2020-10-05 0 52 01" src="https://user-images.githubusercontent.com/64538711/95020288-31372480-06a5-11eb-9f32-c9f231b95084.png">
 
 This README would normally document whatever steps are necessary to get the
