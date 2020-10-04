@@ -1,5 +1,4 @@
 class DearPersonsController < ApplicationController
-
   def index
     @dear_persons = DearPerson.all
     @user = User.find(current_user[:id])
@@ -14,7 +13,7 @@ class DearPersonsController < ApplicationController
     @dear_person = DearPerson.new(dear_person_params)
     if @dear_person.valid?
 
-      @dear_person.save  # バリデーションをクリアした時
+      @dear_person.save # バリデーションをクリアした時
       redirect_to  dear_person_path(@dear_person.id)
     else
       render 'new' # バリデーションに弾かれた時
