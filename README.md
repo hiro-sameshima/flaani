@@ -1,7 +1,7 @@
 # README
 <img width="1680" alt="スクリーンショット 2020-10-04 23 38 57" src="https://user-images.githubusercontent.com/64538711/95019371-f41c6380-069f-11eb-971a-44ea3ad3f410.png">
 <img width="1677" alt="スクリーンショット 2020-10-04 23 39 40" src="https://user-images.githubusercontent.com/64538711/95019490-95a3b500-06a0-11eb-9dd9-93a05494238e.png">
-<img width="1678" alt="スクリーンショット 2020-10-05 0 50 21" src="https://user-images.githubusercontent.com/64538711/95020253-06e56700-06a5-11eb-9396-b9d37b5d3b5c.png">
+<img width="1610" alt="スクリーンショット 2020-10-05 0 52 01" src="https://user-images.githubusercontent.com/64538711/95020288-31372480-06a5-11eb-9f32-c9f231b95084.png">
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
