@@ -5,10 +5,15 @@
       <div class=""><%= link_to "マイページを編集する", edit_user_registration_path%></div>
     </div>
    <div class="person-contents">
+    <div class="tittle">あなたの大切な人</div>
+    <% if (@user_dear_person) === nil? %><%#大切な人が登録されているいないの条件分岐%>
+    大切な人がまだ登録さえていません
+    <%else%>
     <ul class='person-lists'>
     <%# １つのdear_person %>
       <li class='person-list'>
         <% @dear_persons.each do  |person| %>
+        <% if person.user_id == @user.id %>
         <div class="">
           <%= link_to dear_person_path(person.id) do %>
           <%= image_tag  person.image.variant(resize:'200x200'), class:''%>
@@ -17,8 +22,12 @@
           <%= person.nick_name%>
           <%= person.birthday%>
           <%= person.anniversary%>
+          <%= person.user_id%>
+          <%= @user.id%>
         </div>
           <%end%>
+          
+        <% end %>
         <%end%>
         <%@plans.each do |plan|%>
           <%= plan.style%>
@@ -27,6 +36,7 @@
         <% end %>
       </li>
     </ul>
+    <% end %><%#条件分岐の終わり%>
   <%= render "shared/second.footer"%>
     </div>
  </div>

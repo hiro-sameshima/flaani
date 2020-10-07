@@ -4,7 +4,7 @@ class DearPersonsController < ApplicationController
     @user = User.find(current_user[:id])
     @plans = Plan.all
     # @plan = Plan.find(current_user[:id])
-
+    # binding.pry
   end
 
   def new
