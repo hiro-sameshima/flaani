@@ -1,18 +1,32 @@
  <%= render "shared/second.header"%>
- <%= link_to "大切な人を登録する",  new_dear_person_path%>
- <%= link_to "マイページを編集する", edit_user_registration_path%>
-<ul class=''>
-<%# １つのdear_person %>
-  <li class=''>
-  <% @dear_persons.each do  |person| %>
-    <%= link_to dear_person_path(person.id) do %>
-    <%= image_tag  person.image.variant(resize:'500x500'), class:''%>
-    <%= person.nick_name%>
-    <%= person.birthday%>
-    <%= person.anniversary%>
-      <%end%>
-  <%end%>
-  </li>
-</ul>
-<%= render "users/shared/links" %>
- <%= render "shared/second.footer"%>
+ <div class="main-contents"><%#大括り%>
+    <div class="dear-person-contents"><%#リンク部分の括り%>
+      <div class=""><%= link_to "大切な人を登録する",  new_dear_person_path ,class:''%></div>
+      <div class=""><%= link_to "マイページを編集する", edit_user_registration_path%></div>
+    </div>
+   <div class="person-contents">
+    <ul class='person-lists'>
+    <%# １つのdear_person %>
+      <li class='person-list'>
+        <% @dear_persons.each do  |person| %>
+        <div class="">
+          <%= link_to dear_person_path(person.id) do %>
+          <%= image_tag  person.image.variant(resize:'200x200'), class:''%>
+        </div>
+        <div class="person-list-paramaters">
+          <%= person.nick_name%>
+          <%= person.birthday%>
+          <%= person.anniversary%>
+        </div>
+          <%end%>
+        <%end%>
+        <%@plans.each do |plan|%>
+          <%= plan.style%>
+          <%= plan.price%>
+          <%= plan.dear_person_id%>
+        <% end %>
+      </li>
+    </ul>
+  <%= render "shared/second.footer"%>
+    </div>
+ </div>

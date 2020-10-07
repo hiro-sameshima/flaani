@@ -2,7 +2,9 @@ class DearPersonsController < ApplicationController
   def index
     @dear_persons = DearPerson.all
     @user = User.find(current_user[:id])
-    # @plan = Plan.find(params[:id])
+    @plans = Plan.all
+    # @plan = Plan.find(current_user[:id])
+
   end
 
   def new
@@ -14,7 +16,7 @@ class DearPersonsController < ApplicationController
     if @dear_person.valid?
 
       @dear_person.save # バリデーションをクリアした時
-      redirect_to  dear_person_path(@dear_person.id)
+      redirect_to  dear_person_path(@dear_person)
     else
       render 'new' # バリデーションに弾かれた時
     end
@@ -22,7 +24,7 @@ class DearPersonsController < ApplicationController
 
   def show
     @dear_person = DearPerson.find(params[:id])
-    # @plan = Plan.find(params[:id])
+    @plans = Plan.all
   end
 
   def edit

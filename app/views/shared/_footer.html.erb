@@ -4,7 +4,7 @@
     <% if florist_signed_in? %>
     <div class="">
       <%= link_to "ログアウト", destroy_florist_session_path, method: :delete %>
-      <%= link_to current_florist.shop_name,  root_path, method: :get, class: "" %>
+      <%= link_to current_florist.shop_name,   florists_show_path(current_florist[:id]), method: :get, class: "" %>
     </div>
     <% else %>
     <div class="">

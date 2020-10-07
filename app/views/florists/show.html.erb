@@ -1,1 +1,17 @@
-florist#show
+<%= render "shared/second.header"%>
+<% link_to %>
+<%= @florist.shop_name%>
+<%= @florist.email%>
+<% @plans.each do |plan|  %>
+  <%= plan.style%>
+  <%= plan.price%>
+  <%= %>
+<%end%>
+<% @addresses.each do |address|  %>
+  <%= address.postal_code%>
+  <%= address.city%>
+  <%= %>
+<%end%>
+<%= @florist.email%>
+
+<%= render "shared/second.footer"%>

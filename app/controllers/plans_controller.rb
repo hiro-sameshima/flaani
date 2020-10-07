@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-  before_action :dear_person_set, only: [:index, :create]
+  before_action :dear_person_set, only: [:index, :create , :edit, :update]
   def index
     @plan = Plan.new
   end
@@ -13,6 +13,9 @@ class PlansController < ApplicationController
     else
       render 'index' # バリデーションに弾かれた時
     end
+  end
+
+  def edit
   end
 
   private

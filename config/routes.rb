@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get 'florists/show'
   get 'plans/index'
+  # resources :florists , only: [:show]
+
   devise_for :florists, controllers: {
     sessions:      'florists/sessions',
     passwords:     'florists/passwords',
-    registrations: 'florists/registrations'
+    registrations: 'florists/registrations',
+    show:          'florists/show'
   }
   
   devise_for :users, controllers: {

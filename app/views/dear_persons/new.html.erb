@@ -1,9 +1,10 @@
 <%= render "shared/second.header"%>
 <div class="login-field">
   <div class="login-forms">
-    <p class="field">大切な人を登録</p>
+    <h3 class="field">大切な人を登録</h3>
       <%= form_with model:@dear_person, url: dear_persons_path, local: true do |form| %>
       <%# フォームの内部 %>
+       <%= render 'shared/error_messages', model: @dear_person %>
       <%# 画像登録 %>
       <div class="">
         <div class="">
