@@ -1,4 +1,24 @@
-# README
+# Flaani 
+「花を扱うお店」と「顧客」をつなぐ をテーマに制作中のウェブアプリケーションです。
+
+-README-  
+<img width="1680" alt="スクリーンショット 2020-10-04 23 38 57" src="https://user-images.githubusercontent.com/64538711/95019371-f41c6380-069f-11eb-971a-44ea3ad3f410.png">
+
+製作期間10日間
+時間 80時間(1日8時間)
+
+### 現在の実装機能
+-ユーザー機能  <br>
+-花屋さん側のユーザー機能(実装途中)  <br>
+-大切な人を登録できる機能  <br>
+-大切な人に贈る花束を購入する機能  <br>
+
+
+<img width="1672" alt="スクリーンショット 2020-10-05 1 04 40" src="https://user-images.githubusercontent.com/64538711/95020558-ddc5d600-06a6-11eb-9892-448b724c5a19.png">
+#### 追加予定の機能はIssuesに記載します。
+
+
+<img width="1610" alt="スクリーンショット 2020-10-05 0 52 01" src="https://user-images.githubusercontent.com/64538711/95020288-31372480-06a5-11eb-9f32-c9f231b95084.png">
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
