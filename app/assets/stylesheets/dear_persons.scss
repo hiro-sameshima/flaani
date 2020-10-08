@@ -1,14 +1,71 @@
 // Place all the styles related to the dear_persons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.person-lists {
+
+// 上部リンク部分の括り
+.person-links {
   display: flex;
   justify-content: center;
-  align-items: center;
+  // background-color: lightsalmon;
+  margin-bottom: 32px;
+  .link-box {
+    width: 300px;
+    height: 100px;
+    // background-color: aliceblue;
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.1); ;
+    margin: 100px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+  } a {
+    color : gray;
+    font-weight: bold;
+  }
 }
 
-.dear-person-contents {
+
+// dear-person一覧部分
+.person-lists {
+  // background-color: lightslategray;
+  height: 100vh;
+}
+
+.person-list {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
+
+.person-box {
+  margin: 32px 16px;
+  border-radius: 4px;
+}
+img {
+  border-radius: 4px;
+}
+
+// .person-list-parameters {
+//   // background-color: lightsteelblue;
+// }
+
+
+// .person-lists {
+//   background-color: lightgrey;
+//   display: flex;
+//   .person-list {
+//     display: flex;
+//     width: 33vw;
+//     margin: 8px 100;
+//     background-color: lightsalmon;
+//     padding: 16px;
+//   }img{
+//      width: 150px;
+//      height: 250px;
+//   }
+//   .person-list-parameters {
+//     // width: calc(300px- 50vw);
+//     width: 250px;
+//     height: 250px;
+//     background-color: #fff;
+//   }
+// }

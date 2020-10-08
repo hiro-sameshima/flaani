@@ -1,13 +1,264 @@
 <%= render "shared/header.html.erb"%>
 <%# トップコンテンツ %>
 <div class="top-contents">
-  <%= image_tag asset_path('top-image.jpg') %>
- 
+  <%# <%= image_tag asset_path('top-image.jpg') %> 
+  <div class="top-contents-container">
+    <h3 class='top-contents-title'>忘れても、届く</h3>
+    <p class='top-contents-text'>
+    Flaaniは大事な1日を忘れずにブーケをお届けするサービスです<br>
+    毎日が忙しく、大切な人の記念日を忘れがちなあなたの代わりにFlaaniがあります<br>
+</p>
+    <button class="start-btn"><%= link_to "大切な人を登録する",  new_dear_person_path ,class:'start-btn'%></button>
+    
+  </div>
 </div>
 <%# end トップコンテンツ %>
 
+<%# トップミドル部分 %>
+<div class="top-contents-images">
+  <div class="top-content-container">
+    <%= image_tag asset_path('main-image3.jpg') %>
+    <div class="content-text-box">
+    <h5>シンプルな準備</h5>
+    <p>
+      ステップは簡単な登録、プランを選ぶ、決済。この3つだけです<br>
+    </p>
+    </div>
+  </div>
+  <div class="top-content-container">
+    <%= image_tag asset_path('main-image1.png') %>
+    <div class="content-text-box">
+    <h5>専属のフローリストが制作</h5>
+    <p>
+      あなたに専属のFloristが付きます。好みや好きな花など<br>リクエストできます<br>
+    </p>
+    </div>
+  </div>
+  <div class="top-content-container">
+    <%= image_tag asset_path('main-image2.jpg') %>
+    <div class="content-text-box">
+    <h5>毎年指定の場所へ</h5>
+    <p>登録しておいた場所へ専用のメッセージカードを添えてお届けします。
+    </p>
+    </div>
+  </div>
+</div>
+<%# endトップミドル部分 %>
+
+<%# バックグラウンド部分 %>
+<div class="background-space1">
+</div>
+<%# endバックグラウンド部分 %>
+
+<%# スタイル紹介部分 %>
+<div class="styles-contents">
+  <div class="style-contents-inner">
+    <div class="style-title">
+      <h3 class="style-title">選択を簡単に</h3>
+    <div class="style-Description">
+      <p>Flaaniは4つのスタイルから選ぶだけでfloristが季節のお花を使って素敵なブーケを束ねてくれます。プランはいつでも変更可能です。
+      </p>
+    </div>
+    </div>
+    <div class="style-container">
+      <div class="bright-style"></div>
+      <div class="cute-style"></div>
+      <div class="cool-style"></div>
+      <div class="natural-style"></div>
+    </div>
+  </div>
+</div>
+  
+<%# バックグラウンド部分 %>
+<div class="background-space2">
+</div>
+<%# endバックグラウンド部分 %>
+
+<%# トップミドル部分 %>
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img1.png') %>
+    <div class="content-text-box2">
+    <h5>CUTE</h5>
+    <p>
+      Daliah「熱唱」とテナチュールを使い大人っぽさの中にある可愛さを表現しました<br>
+    </p>
+  </div>
+</div>
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img2.png') %>
+    <div class="content-text-box2">
+    <h5>SIMPLE</h5>
+    <p>
+      スカビオサとオクラレルカ、千日紅をだけで束ねシンプルなブーケに仕上げました。
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img3.png') %>
+    <div class="content-text-box2">
+    <h5>BRIGHT</h5>
+    <p>
+      トーンを明るくガーベラのオレンジケーキ、ベビーロマンティカなど可愛いくコロンと仕上げてます。
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img4.png') %>
+    <div class="content-text-box2">
+    <h5>COOL</h5>
+    <p>
+      大輪のバラはフリーダムとアンティグアのカーネーションの組み合わせで大人っぽさを演出しました。
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img5.png') %>
+    <div class="content-text-box2">
+    <h5>SIMPLE</h5>
+    <p>
+      白いバラは「ホワイトマカロン」そして日持ちのする紫陽花「ミニグリーン」に葉物を添えてシンプルに仕上げました。
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img6.png') %>
+    <div class="content-text-box2">
+    <h5>NATURAL</h5>
+    <p>
+      ユーカリの「ポポラス」、「アンティーク紫陽花」。アクセントにプロテアを使いスワッグを意識したブーケです
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img7.png') %>
+    <div class="content-text-box2">
+    <h5>COOL</h5>
+    <p>
+      ダリアのムーンストーンをメインに大人らしさを感じるブーケに仕上げました。
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img8.png') %>
+    <div class="content-text-box2">
+    <h5>CUUTE</h5>
+    <p>
+      ピンクを抑えめにして全体的に明るく仕上げたブーケ。メインはピタハヤという薔薇。おすすめです
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img9.png') %>
+    <div class="content-text-box2">
+    <h5>SIMPLE</h5>
+    <p>
+      かすみ草だけを活かしたブーケ。ただシンプルに。
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img10.png') %>
+    <div class="content-text-box2">
+    <h5>NATURAL</h5>
+    <p>
+      完全なNATURALというより少し華やかさをプラスしたブーケです。スカビオサ、トルコキキョウなどをメインに。
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img11.png') %>
+    <div class="content-text-box2">
+    <h5>COOL</h5>
+    <p>
+      ユリ(ソルボンヌ)をフォーカルにかっこよく仕上げました。
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img12.png') %>
+    <div class="content-text-box2">
+    <h5>SIMPLE</h5>
+    <p>
+      かすみ草をメインに丸く作りつつ、ラッピングで大人っぽさを演出しています。
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img13.png') %>
+    <div class="content-text-box2">
+    <h5>CUTE</h5>
+    <p>
+      ダリア、アイスティーなど。Brightに近づけながらもラッピングでCUTEさを演出しています
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img14.png') %>
+    <div class="content-text-box2">
+    <h5>SIMPLE</h5>
+    <p>
+      スイートピーのウルトラヴァイオレットと季節のグリーンとのシンプルなブーケ。
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="top-contents-images2">
+  <div class="top-content-container2">
+    <%= image_tag asset_path('flower-img15.png') %>
+    <div class="content-text-box2">
+    <h5>NATURAL</h5>
+    <p>
+      ナルコラン・アスパラガス観賞用・ハーブなど多種のグリーンを使用しました。
+    </p>
+    </div>
+  </div>
+</div>
+
+</div><%#flower部分の大枠%>
+<%# endトップミドル部分 %>
+<%# endスタイル紹介部分 %>
 <%# メインコンテンツ %>
-<div class="main-contents">
+<%# <div class="main-contents">
+
   <div class="main-contents-title">
     <h3>記念日を覚えていますか？<h3>
   </div>
@@ -19,63 +270,10 @@ Flaaniは、そのような大事な1日を忘れずにブーケをお届けす�
     </p>
   </div>
  <%=link_to '大切な人を登録',  new_dear_person_path, class:"btn btn-left" %>
-</div>
+<%# </div> %> 
 <%# endメインコンテンツ %>
 
-<%# ミドルコンテンツ %>
-<div class="middle-contents">
-  <div class="middle-contents-inner">
-    <div class="left-content">
-      <div class="left-content-title">
-        <h3>Flaani</h3>
-      </div>
-      <div class=left-content-Description>
-        <p>Flaaniは、毎月定期でお支払いいただくことで、記念日に素敵なブーケをお届けいたします。 まずはお一人だけでも、大切な人を登録しましょう。</p>
-      </div>
-        <div class="btn-left">
-        <%=link_to '大切な人を登録',  new_dear_person_path, class:"btn btn-left" %>
-        </div>
-    </div>
-    <div class="right-content">
-          <div class="right-content-title">
-        <h3>Florists</h3>
-      </div>
-      <div class=right-content-Description>
-        <p>日々、花に魂を吹き込む職人＝floristが、あなたの大切な人に届くブーケをお作りします。経験豊富なfloristがおりますので、お客様が満足できる花束をお届けできます。
-ご希望のfloristをお選びください</p>
-      </div>
-        <div class="btn-right">
-          <%=link_to 'Floristを探す', root_path, class:"btn btn-right" %>
-        </div>
-    </div>
-  </div>
-  </div>
-<%# endミドルコンテンツ %>
 
-<%# バックグラウンド部分 %>
-<div class="background-space">
-</div>
-<%# endバックグラウンド部分 %>
 
-<%# スタイル紹介部分 %>
-<div class="styles-contents">
-  <div class="style-contents-inner">
-    <div class="style-title">
-      <h3 class="style-title">選択を簡単に</h3>
-    </div>
-    <div class="style-container">
-      <div class="bright-style"></div>
-      <div class="cute-style"></div>
-      <div class="cool-style"></div>
-      <div class="natural-style"></div>
-    </div>
-    <div class="style-Description">
-      <p>Flaaniは4つのスタイルから選ぶだけでfloristが季節のお花を使って素敵なブーケを束ねてくれます。プランはいつでも変更可能です。
-      </p>
-    </div>
-  </div>
-</div>
-  
-<%# endスタイル紹介部分 %>
 <%= render "shared/footer.html.erb"%>
 

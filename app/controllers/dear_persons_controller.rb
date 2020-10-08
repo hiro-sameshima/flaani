@@ -1,4 +1,5 @@
 class DearPersonsController < ApplicationController
+  before_action :authenticate_user!,  except: [:index, :show]
   def index
     @dear_persons = DearPerson.all
     @user = User.find(current_user[:id])
