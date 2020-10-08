@@ -1,20 +1,29 @@
 <footer>
-  <div class="footer-content">
-  <%# 花屋さん部分 %>
-    <% if florist_signed_in? %>
-    <div class="">
-      <%= link_to "ログアウト", destroy_florist_session_path, method: :delete %>
-      <%= link_to current_florist.shop_name,   florists_show_path(current_florist[:id]), method: :get, class: "" %>
+
+  <div class="footer-contents">
+    <div class="footer-contents-container">
     </div>
-    <% else %>
-    <div class="">
-      <%= link_to "ログイン", new_florist_session_path, class: "post" %>
-      <%= link_to "新規登録", new_florist_registration_path, class: "post" %>
+    
+    <div class="footer-contents-container">
+      <ul>
+        <li>企業情報</li>
+        <li>Flaaniについて</li>
+        <li>お問い合わせ</li>
+        <% if  florist_signed_in?%>
+        <li> <%= link_to "ログアウト", destroy_florist_session_path, method: :delete,class: 'link-font-color' %></li>
+        <li><i class="fas fa-user"></i><%= link_to "#{current_florist.shop_name}としてログインしています",   florists_show_path(current_florist[:id]), method: :get, class: "link-font-color" %></li>
+        <% else %>
+        <li> <%= link_to "加盟店として登録する", new_florist_session_path, method: :delete,class: '' %></li>
+        <% end %>
+      </ul>    
     </div>
-    <% end %>
-    <%# 花屋さん部分end %>
+
+    <div class="footer-contents-container">
+    </div>
   </div>
-  <p>
+  <div class="copyright-parts">
+  <p class="copyright">
     Copyright Flaani 2020.
   </p>
+  </div>
 </footer>
