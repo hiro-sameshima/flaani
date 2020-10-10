@@ -5,4 +5,5 @@ class Address < ApplicationRecord
   belongs_to_active_hash :delivery_time
 
   belongs_to :plan, optional: true
+  belongs_to :address, optional: true
 end

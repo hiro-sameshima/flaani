@@ -1,4 +1,11 @@
-.a {
-  height: 1000px;
-  background-color: aqua;
+.login-field {
+  text-align: center;
+}
+
+.parts-margin {
+  margin: 16px;
+}
+
+.plans-field-new {
+  height: 300px;
 }

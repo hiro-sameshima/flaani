@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-  before_action :dear_person_set, only: [:index, :create , :edit, :update]
+  before_action :dear_person_set, only: [:index, :create ]
   def index
     @plan = Plan.new
   end

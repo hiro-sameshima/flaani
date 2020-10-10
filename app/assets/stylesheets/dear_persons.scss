@@ -6,12 +6,10 @@
 .person-links {
   display: flex;
   justify-content: center;
-  // background-color: lightsalmon;
   margin-bottom: 32px;
   .link-box {
     width: 300px;
     height: 100px;
-    // background-color: aliceblue;
     box-shadow: 8px 8px 8px rgba(0,0,0,0.1); ;
     margin: 100px 32px;
     display: flex;
@@ -24,48 +22,78 @@
   }
 }
 
-
-// dear-person一覧部分
-.person-lists {
-  // background-color: lightslategray;
-  height: 100vh;
+.person-contents {
+  height: 1000px;
 }
 
-.person-list {
+li{
   display: flex;
   justify-content: center;
 }
-
 .person-box {
-  margin: 32px 16px;
-  border-radius: 4px;
+  margin: 16px 32px;
+  border:  1px solid lightgray;
+  box-shadow: 8px 8px 8px rgba(0,0,0,0.1); ;
+  border-radius: 8px;
 }
-img {
-  border-radius: 4px;
+.person-list-parameters {
+  height: 32px;
+  padding: 16px;
+}
+img{
+  border-radius: 8px;
 }
 
-// .person-list-parameters {
-//   // background-color: lightsteelblue;
-// }
+// show部分スタイル
+.show-contents {
+  display: flex;
+  height: 200px;
+  margin: 64px 64px;
+  padding-left: 140px;
+}
 
+.show-image-box {
+  border-radius: 4px;
+  margin-right: 40px;
+}
 
-// .person-lists {
-//   background-color: lightgrey;
-//   display: flex;
-//   .person-list {
-//     display: flex;
-//     width: 33vw;
-//     margin: 8px 100;
-//     background-color: lightsalmon;
-//     padding: 16px;
-//   }img{
-//      width: 150px;
-//      height: 250px;
-//   }
-//   .person-list-parameters {
-//     // width: calc(300px- 50vw);
-//     width: 250px;
-//     height: 250px;
-//     background-color: #fff;
-//   }
-// }
+.show-parameters-box {
+  width: 300px;
+}
+
+.parameter-box {
+  height: 64px;
+  width: 240px;
+  margin: 0 0 16px 0;
+  box-shadow: 8px 8px 8px rgba(0,0,0,0.1); ;
+  
+}
+
+.show-parameter {
+  width: 300px;
+  height: 40px;
+  padding: 4px 32px;
+}
+
+.show-edit-box {
+  margin: 32px 64px;
+}
+
+.edit-box {
+  width: 300px;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 8px 8px 8px rgba(0,0,0,0.1); ;
+  border-radius: 8px;
+  border: solid 3px lightpink;
+  text-align: center;
+  margin: 032px auto;
+  line-height: 60px;
+
+}
+
+.edit-box a {
+  color: gray;
+  font-size: 24px;
+  font-weight: bold;
+}

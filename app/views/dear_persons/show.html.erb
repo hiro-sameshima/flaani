@@ -1,14 +1,67 @@
  <%= render "shared/second.header"%>
-<%= image_tag @dear_person.image ,size:'500x500',class:"" %>
-<%= @dear_person.nick_name %>
-<%= @dear_person.family_name %>
-<%= @dear_person.last_name %>
-<%= @dear_person.family_name_kana %>
-<%= @dear_person.last_name_kana %>
-<%= "#{@dear_person.birthday.month}月#{@dear_person.birthday.day}日" %>
-<%= "#{@dear_person.anniversary.month}月#{@dear_person.anniversary.day}日" %>
-<%= @dear_person.plan.style%>
+ <div class="show-contents">
+    <div class="show-image-box">
+      <%= image_tag @dear_person.image ,size:'500x500',class:"" %>
+    </div>
+    <div class="show-parameters-box">
+
+      <div class="parameter-box">
+        <div class="parameter-title">名前</div>
+        <div class="show-parameter">
+        <%= @dear_person.nick_name %>
+        </div>
+      </div>
+
+      <div class="parameter-box">
+        <div class="parameter-title">名字</div>
+        <div class="show-parameter">
+        <%= @dear_person.family_name %>
+        </div>
+      </div>
+
+      <div class="parameter-box">
+        <div class="parameter-title">名前</div>
+        <div class="show-parameter">
+        <%= @dear_person.last_name %>
+        </div>
+      </div>
+
+      <div class="parameter-box">
+        <div class="parameter-title">誕生日</div>
+        <div class="show-parameter">
+        <%= "#{@dear_person.birthday.month}月#{@dear_person.birthday.day}日" %>
+        </div>
+      </div>
+
+      <div class="parameter-box">
+        <div class="parameter-title">記念日</div>
+        <div class="show-parameter">
+        <%= "#{@dear_person.anniversary.month}月#{@dear_person.anniversary.day}日" %>
+        </div>
+      </div>
+      
+      <div class="parameter-box">
+        <div class="parameter-title">プラン</div>
+        <div class="show-parameter">
+        <% @plans.each do |plan| %>
+          <% if plan.dear_person_id == @dear_person.id %>
+          <%= @dear_person.plan.style%>
+          <% else %>
+          <%= link_to 'プランを決める', dear_person_plans_path(@dear_person.id), method: :get, class:''%>
+          <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+      <div class="show-edit-box">
+      <div class="edit-box">
+          <%= link_to "情報を編集する", edit_dear_person_path(@dear_person.id), method: :get, class:''%>
+      </div>
+      <div class="edit-box">
+          <%= link_to "削除する", dear_person_path(@dear_person.id), method: :delete, class:'' %>
+      </div>
+      </div>
+ </div>
+  <%= render "shared/second.footer" %>
 
 
-<%= link_to '編集する', edit_dear_person_path(@dear_person.id), method: :get, class:''%>
-<%= link_to '削除する', dear_person_path(@dear_person.id), method: :delete, class:'' %>

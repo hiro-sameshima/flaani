@@ -2,6 +2,7 @@ class DearPerson < ApplicationRecord
   belongs_to :user  # usersテーブルとのアソシエーション
   has_one_attached :image # 各画像と1対1で結びつける
   has_one :plan
+  has_one :address
   # 空だと登録できないバリデーション
   with_options presence: true do
     validates :nick_name
