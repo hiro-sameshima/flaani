@@ -97,3 +97,29 @@ img{
   font-size: 24px;
   font-weight: bold;
 }
+
+// 新規登録
+.dear-person-sizebox {
+  width: 10px;
+}
+
+.input-birth-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.text{
+  font-size: 16px;
+}
+
+.dear-person-new-height {
+  height: 300px;
+}
+.plans-field-new {
+  padding: 36px 0 480px;
+  background-color: #DCDCDC;
+  width: 700px;
+  height: 1060px;
+  text-align: center;
+  margin: 64px auto;
+}
