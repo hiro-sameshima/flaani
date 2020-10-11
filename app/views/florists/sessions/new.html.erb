@@ -1,14 +1,18 @@
-<h2>Log in</h2>
+<%= render "shared/second.header"%>
+<div class="plans-field plans-field-new">
+  <div class="login-forms">
+
+<h2 class="info-input-haedline">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+  <div class="one-input-partsone-input-parts parts-margin">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email,class:"input-default", autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
+  <div class="one-input-partsone-input-parts parts-margin">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password,class:"input-default", autocomplete: "current-password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -19,8 +23,9 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in" ,class:"btn"%>
+  </div>
   </div>
 <% end %>
-
-<%= render "florists/shared/links" %>
+</div>
+<%= render "shared/second.footer"%>
