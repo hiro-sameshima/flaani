@@ -64,7 +64,7 @@ gem 'pry-rails'
 
 group :production do
 #Heroku用に静的アセットファイルやログの保存先を微調整するGem
-  gem 'rails_12factor'
+  # gem 'rails_12factor'
 #Unicornの導入しアプリケーションサーバーを起動
   gem 'unicorn', '5.4.1'
 end
