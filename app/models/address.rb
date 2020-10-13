@@ -4,6 +4,7 @@ class Address < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :delivery_time
 
+  belongs_to :dear_person
   belongs_to :plan, optional: true
   belongs_to :address, optional: true
 end

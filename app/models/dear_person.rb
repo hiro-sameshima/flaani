@@ -1,8 +1,8 @@
 class DearPerson < ApplicationRecord
   belongs_to :user  # usersテーブルとのアソシエーション
   has_one_attached :image # 各画像と1対1で結びつける
-  has_one :plan
-  has_one :address
+  has_one :plan,dependent: :destroy
+  has_one :address,dependent: :destroy
   # 空だと登録できないバリデーション
   with_options presence: true do
     validates :nick_name
