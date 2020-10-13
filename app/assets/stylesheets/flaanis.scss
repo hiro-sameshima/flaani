@@ -8,11 +8,6 @@ $main-color : #333;
 // メインの白系フォントカラー
 $wight-color : #fff;
 
-// ヘッダーの下部固定用クラス
-.header-lower-fixed {
-  position: fixed;
-}
-
 // 入力部品共通部分
 .input-default {
   width: 300px;
@@ -53,44 +48,6 @@ body {
 // aタグの下線修正
 a {
   text-decoration: none;
-}
-
-// ヘッダー部分のCSS
-header{
-  width: 100vw;
-  height: 87.2px;
-  background-color: #ffc4cc;
-  .heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .header-logo {
-    height: 83.02px; 
-    min-width: 100px;
-  }
-  ul {
-    display: flex;
-    align-items: center;
-  }
-  li {
-    margin: 0 3vw;
-    min-width: 10px;
-    .fa-search {
-      font-size: large;
-      color: gray;
-    }
-    .material-icons {
-      font-size: large;
-    }
-  }
-  .nav-list {
-    color: $main-color;
-  }
-    .search{
-      border-radius: 4px;
-      border: none;
-    }
 }
 
 // セカンドヘッダー部分
