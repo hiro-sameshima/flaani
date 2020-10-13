@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// メインのフォントカラー
+// デフォルトフォントカラー
 $main-color : #333;
 
 // メインの白系フォントカラー
@@ -28,14 +28,14 @@ $wight-color : #fff;
   color: #333;
 }
 
-// ボタンの基礎設定
+// 基礎的なボタン
 .btn {
   width: 80px;
   height: 32px;
   padding: 16px 8px;
   background-color: #FF3333;
   border-radius: 4px;
-  color: #fff;
+  color: $wight-color;
 }
 
 // フォームボタンの基礎設定
@@ -46,10 +46,11 @@ $wight-color : #fff;
 
 body {
   font-family:  'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif,'Roboto', sans-serif;
-  color: #333;
   color: $main-color;
-  background-color: #fff;
+  background-color: $wight-color;
 }
+
+// aタグの下線修正
 a {
   text-decoration: none;
 }
@@ -168,25 +169,6 @@ header{
   }
 }
 
-// メインコンテンツ部分
-.main-contents {
-  height: 100vh;
-  text-align: center;
-  padding: 0 96px;
-  .main-contents-title {
-    margin-top: 88px;
-  }
-  h3 {
-    margin: 160px 0;
-    font-size: 3rem;
-  }
-    p {
-      font-size: 2rem;
-    }
-}
-
-
-
 // ミドルコンテンツ部分
 .middle-contents {
   height: 1200px;
@@ -234,7 +216,6 @@ header{
           margin-top: 80px;
         }
     }
-    
   }
   
   
