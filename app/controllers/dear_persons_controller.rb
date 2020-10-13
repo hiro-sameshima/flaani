@@ -26,6 +26,13 @@ class DearPersonsController < ApplicationController
   def show
     @dear_person = DearPerson.find(params[:id])
     @plans = Plan.all
+    @person_plan = nil
+    @plans.each do |plan|
+      if plan.dear_person_id == @dear_person.id
+        break  @person_plan = plan 
+      else 
+      end  
+    end
   end
 
   def edit

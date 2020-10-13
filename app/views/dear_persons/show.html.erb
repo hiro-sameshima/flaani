@@ -43,15 +43,19 @@
       <div class="parameter-box">
         <div class="parameter-title">プラン</div>
         <div class="show-parameter">
-        <% @plans.each do |plan| %>
-          <% if plan.dear_person_id == @dear_person.id %>
-          <%= @dear_person.plan.style%>
-          <% else %>
+
+        <% if @plans.blank? %><%#すべてのプランが空だったとき%>
           <%= link_to 'プランを決める', dear_person_plans_path(@dear_person.id), method: :get, class:''%>
-          <% end %>
+        <% elsif @person_plan == nil %>
+          <%= link_to 'プランを決める', dear_person_plans_path(@dear_person.id), method: :get, class:''%>
+        <% else %>
+        <%= @person_plan.style%>
         <% end %>
+
         </div>
       </div>
+
+
     </div>
       <div class="show-edit-box">
       <div class="edit-box">
