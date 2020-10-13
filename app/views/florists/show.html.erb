@@ -1,21 +1,22 @@
 <%= render "shared/second.header"%>
-<ul>
-<% @persons.each do |person| %>
-  <li>
-
-  </li>
-<% end %>
-</ul>
-
 <% @persons.each do |person| %>
 <ul>
-  <li>
+  <li class="order-parameter">
     <div class="order-parameter-box">
       <div class="order-parameter-title">
         <%="注文番号"%>
       </div>
       <div class="order-parameter-value">
         <%=person.plan.id%>
+      </div>
+    </div>
+
+    <div class="order-parameter-box">
+      <div class="order-parameter-title">
+        <%="配達日"%>
+      </div>
+      <div class="order-parameter-value">
+        <%= "#{person.anniversary.month}月#{person.anniversary.day}日" %>
       </div>
     </div>
 
