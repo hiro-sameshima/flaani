@@ -3,14 +3,10 @@
             <%= link_to image_tag("logo.png", class:"header-logo"), root_path %>
             <nav class="global-nav">
               <ul>
-                <li>
-                <i class="fas fa-search"></i><input placeholder="SEARCH" class="search">
-                </li>
                 <% if user_signed_in? %><%#ログインしていたら表示される%>
-                    <%= link_to 'LOGOUT',destroy_user_session_path, method: :delete, class: "nav-list" %>
-                <li>
-                    <i class="fas fa-user"></i>
-                    <%= link_to current_user.name,dear_persons_path, method: :get, class: "nav-list font-little-up" %>
+                <li class="">
+                  <%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class: "nav-list" %>
+                  <%= link_to current_user.name,dear_persons_path, method: :get, class: "nav-list" %>
                 </li>
          
                 <% else %><%#ログインしていなかったら以下が表示される%>
@@ -19,7 +15,7 @@
                     <%= link_to 'SIGN IN',new_user_session_path, method: :post, class: "nav-list" %>
                 </li>
                 <li>
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user nav-list"></i>
                     <%= link_to 'SIGN UP',new_user_registration_path, method: :get, class: "nav-list" %>
                 </li>
                 <% end %>
