@@ -1,5 +1,5 @@
 class DearPersonsController < ApplicationController
-  before_action :authenticate_user!,  except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @dear_persons = DearPerson.all
     @user = User.find(current_user[:id])
@@ -26,10 +26,7 @@ class DearPersonsController < ApplicationController
     @plans = Plan.all
     @person_plan = nil
     @plans.each do |plan|
-      if plan.dear_person_id == @dear_person.id
-        break  @person_plan = plan 
-      else 
-      end  
+      break @person_plan = plan if plan.dear_person_id == @dear_person.id
     end
   end
 

@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-  before_action :dear_person_set, only: [:index, :create ]
+  before_action :dear_person_set, only: [:index, :create]
   def index
     @plan = Plan.new
   end
@@ -22,7 +22,7 @@ class PlansController < ApplicationController
 
   def plan_params
     params.permit(:dear_person_id, :token, :price, :style, :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :delivery_time_id).merge(user_id: current_user.id).merge(dear_person_id: @dear_person.id)
-  rams.require(:plan).permit(:token, :price, :style, :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :delivery_time_id).merge(dear_person_id: @dear_person.id )
+    rams.require(:plan).permit(:token, :price, :style, :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :delivery_time_id).merge(dear_person_id: @dear_person.id)
   end
 
   def dear_person_set

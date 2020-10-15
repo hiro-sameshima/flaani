@@ -1,5 +1,5 @@
 class FlaanisController < ApplicationController
   def index
-    @florists =Florist.all
+    @florists = Florist.all
   end
 end
