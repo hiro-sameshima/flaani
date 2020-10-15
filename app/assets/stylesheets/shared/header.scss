@@ -31,6 +31,7 @@ header{
   li {
     margin: 0 3vw;
     min-width: 10px;
+    font-weight: bolder;
     
     .fa-search {
       font-size: large;
@@ -41,7 +42,7 @@ header{
     }
   }
   .nav-list {
-    color: $main-color;
+    color: rgb(80, 80, 80);
     padding: 8px 16px;
   }
     .search{

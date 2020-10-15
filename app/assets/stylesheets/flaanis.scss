@@ -275,9 +275,8 @@ a {
       height: 280px;
       background-color: #FFFF;
       img {
-        width: 300px;
-        height: 200px;
         border-radius: 4px;
+        transition-duration: 0.5s;
       }
       .content-text-box2 {
         padding: 8px 16px;
@@ -292,7 +291,12 @@ a {
     }
   }
 
-  
+  .top-content-image-box :hover {
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+    opacity: 0.95;
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.2);
+  }
 
 
 // UserログインCSS
