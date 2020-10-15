@@ -4,6 +4,5 @@ class FloristsController < ApplicationController
     @florist = current_florist
     @plans = Plan.all
     @addresses = Address.all
-    binding.pry
   end
 end
