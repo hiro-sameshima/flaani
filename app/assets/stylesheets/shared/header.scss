@@ -51,7 +51,7 @@ header{
     }
 }
 // ヘッダー部分
-li :hover {
+.menu-list :hover {
   font-weight: bold;
   color: $wight-color;
   transition: 0.7s;
