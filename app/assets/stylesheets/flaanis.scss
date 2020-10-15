@@ -2,16 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// メインのフォントカラー
+// デフォルトフォントカラー
 $main-color : #333;
 
 // メインの白系フォントカラー
 $wight-color : #fff;
-
-// ヘッダーの下部固定用クラス
-.header-lower-fixed {
-  position: fixed;
-}
 
 // 入力部品共通部分
 .input-default {
@@ -28,14 +23,14 @@ $wight-color : #fff;
   color: #333;
 }
 
-// ボタンの基礎設定
+// 基礎的なボタン
 .btn {
   width: 80px;
   height: 32px;
   padding: 16px 8px;
   background-color: #FF3333;
   border-radius: 4px;
-  color: #fff;
+  color: $wight-color;
 }
 
 // フォームボタンの基礎設定
@@ -46,56 +41,13 @@ $wight-color : #fff;
 
 body {
   font-family:  'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif,'Roboto', sans-serif;
-  color: #333;
   color: $main-color;
-  background-color: #fff;
+  background-color: $wight-color;
 }
+
+// aタグの下線修正
 a {
   text-decoration: none;
-}
-
-// ヘッダー部分のCSS
-header{
-  width: 100vw;
-  height: 87.2px;
-  background-color: #ffc4cc;
-  .heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .header-logo {
-    height: 83.02px; 
-    min-width: 100px;
-  }
-  ul {
-    display: flex;
-    align-items: center;
-  }
-  li {
-    margin: 0 3vw;
-    min-width: 10px;
-    .fa-search {
-      font-size: large;
-      color: gray;
-    }
-    .material-icons {
-      font-size: large;
-    }
-  }
-  .nav-list {
-    color: $main-color;
-  }
-    .search{
-      border-radius: 4px;
-      border: none;
-    }
-}
-
-// セカンドヘッダー部分
-.second-heading {
-  text-align: center;
-  margin-bottom: 100px;
 }
 
 // トップ部分の表示
@@ -168,25 +120,6 @@ header{
   }
 }
 
-// メインコンテンツ部分
-.main-contents {
-  height: 100vh;
-  text-align: center;
-  padding: 0 96px;
-  .main-contents-title {
-    margin-top: 88px;
-  }
-  h3 {
-    margin: 160px 0;
-    font-size: 3rem;
-  }
-    p {
-      font-size: 2rem;
-    }
-}
-
-
-
 // ミドルコンテンツ部分
 .middle-contents {
   height: 1200px;
@@ -234,7 +167,6 @@ header{
           margin-top: 80px;
         }
     }
-    
   }
   
   
@@ -357,56 +289,8 @@ header{
     }
   }
 
-  // フッター部分
-  footer {
-    height: 320px;
-    background-color: #B0C4DE;
-    .btn-container {
-      width: 160px;
-      height: 160px;
-      border: solid 1px black;
-    }
-    .login-btn {
-      background-color: silver;
-      color: snow;
-    }
-    .footer-contents {
-      display: flex;
-      padding-top: 24px;
-    }
-    .footer-contents-container {
-    width: 33vw;
-  }
-  li {
-    text-align: center;
-    margin: 16px 0 0 32px;
-  }
-  .copyright-parts {
-    width: 100vw;
-    border-top: solid 1px black;
-    padding: 16px;
-    margin-top: 40px;
-  }
   
-      .copyright {
-        font-weight: bold;
-        text-align: center;
-      }
-}
 
-// セカンドフッター
-.second-footer {
-  margin-top: 400px;
-  width: 100vw;
-  background-color: #ffc4cc;
-  height: 100px;
-  text-align: center;
-}
-
-.footer-logo {
-  width: 200px;
-  height: 100px;
-}
 
 // UserログインCSS
 .login-field {

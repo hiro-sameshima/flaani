@@ -1,0 +1,35 @@
+// フッター部分
+footer {
+  height: 320px;
+  background-color: #B0C4DE;
+  .btn-container {
+    width: 160px;
+    height: 160px;
+    border: solid 1px black;
+  }
+  .login-btn {
+    background-color: silver;
+    color: snow;
+  }
+  .footer-contents {
+    display: flex;
+    padding-top: 24px;
+  }
+  .footer-contents-container {
+  width: 33vw;
+}
+li {
+  text-align: center;
+  margin: 16px 0 0 32px;
+}
+.copyright-parts {
+  width: 100vw;
+  border-top: solid 1px black;
+  padding: 16px;
+  margin-top: 40px;
+}
+    .copyright {
+      font-weight: bold;
+      text-align: center;
+    }
+}
