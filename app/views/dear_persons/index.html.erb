@@ -1,8 +1,8 @@
  <%= render "shared/second.header"%>
  <div class="main-contents"><%#大括り%>
     <div class="person-links"><%#リンク部分の括り%>
-      <div class="link-box"><%= link_to "大切な人を登録する",  new_dear_person_path ,class:''%></div>
-      <ul class="link-box"><%= link_to "マイページを編集する", edit_user_registration_path%></ul>
+      <div class="link-box"><%= link_to "大切な人を登録する",  new_dear_person_path ,class:'person-edit-link'%></div>
+      <div class="link-box"><%= link_to "マイページを編集する", edit_user_registration_path,class:'person-edit-link'%></div>
     </div>
 
    <div class="person-contents">
@@ -17,7 +17,7 @@
                   </div>
               </div>
             <% else %>
-            <% end %><%#もし%>
+            <% end %>
           <%end%><%# personのeach%>
        </li>
      </ul>

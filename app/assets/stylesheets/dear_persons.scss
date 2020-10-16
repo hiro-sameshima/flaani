@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 32px;
-  .link-box {
+  .person-edit-link {
     width: 300px;
     height: 100px;
     box-shadow: 8px 8px 8px rgba(0,0,0,0.1); ;
@@ -17,7 +17,7 @@
     align-items: center;
     border-radius: 6px;
   } a {
-    color : gray;
+    color : rgb(80, 80, 80);
     font-weight: bold;
   }
 }
@@ -33,10 +33,11 @@ li{
 .person-box {
   margin: 16px 32px;
   border:  1px solid lightgray;
-  box-shadow: 8px 8px 8px rgba(0,0,0,0.1); ;
+  box-shadow: 8px 8px 8px rgba(0,0,0,0.04); ;
   border-radius: 8px;
 }
 .person-list-parameters {
+  font-weight: bolder;
   height: 32px;
   padding: 16px;
 }
@@ -44,6 +45,11 @@ img{
   border-radius: 8px;
 }
 
+.person-lists :hover{
+  transform: scale(1.01);
+  transition-duration: 0.5s;
+  opacity: 0.97;
+}
 // show部分スタイル
 .show-contents {
   display: flex;
@@ -122,4 +128,10 @@ img{
   height: 1060px;
   text-align: center;
   margin: 64px auto;
+}
+
+.link-box :hover {
+  background-color: lightpink;
+  color: #fff;
+  transition: 0.7s;
 }

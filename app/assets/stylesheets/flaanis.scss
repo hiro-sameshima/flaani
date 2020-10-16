@@ -14,10 +14,6 @@ $wight-color : #fff;
   height: 40px;
 }
 
-.fa-user {
-  margin-right: 4px;
-}
-
 // linkタグのフォントをデフォルトに変更
 .link-font-color {
   color: #333;
@@ -79,17 +75,24 @@ a {
     font-weight: bold;
   }
   .start-btn {
-    width: 240px;
-    height: 48px;
     background-color: honeydew;
     padding: 8px 16px;
     margin-top: 16px;
     border-radius: 8px;
-    color: gray;
+    color: rgb(80,80,80);
     font-size: 16px;
     font-weight: bold;
     border: none;
+    text-align: center;
+    line-height: 48px;
   }
+}
+
+.start-btn-box :hover {
+  background-color: #ff6666;
+  color: #e3e3e3;
+  transition: 0.7s;
+  box-shadow: 18px 8px 8px rgba(80,80,80,0.4);
 }
 
 //トップミドル部分の表示
@@ -272,9 +275,8 @@ a {
       height: 280px;
       background-color: #FFFF;
       img {
-        width: 300px;
-        height: 200px;
         border-radius: 4px;
+        transition-duration: 0.5s;
       }
       .content-text-box2 {
         padding: 8px 16px;
@@ -289,7 +291,12 @@ a {
     }
   }
 
-  
+  .top-content-image-box :hover {
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+    opacity: 0.95;
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.2);
+  }
 
 
 // UserログインCSS
