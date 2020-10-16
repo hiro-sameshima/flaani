@@ -31,6 +31,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # TestCode
+  gem 'rspec-rails', '~> 4.0.0'
+  # テスト用のインスタンス管理
+  gem 'factory_bot_rails'
+  # テスト用ランダムな値を生成する
+  gem 'faker'
   # 自動デプロイのためツールCapistrano導入
   gem 'capistrano'
   gem 'capistrano-rbenv'
