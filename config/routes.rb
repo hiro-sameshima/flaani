@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'florists/show'
   get 'plans/index'
-  # resources :florists , only: [:show]
 
   devise_for :florists, controllers: {
     sessions:      'florists/sessions',
