@@ -37,6 +37,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   # テスト用ランダムな値を生成する
   gem 'faker'
+  # 日本語やカナをfakerで使用する
+  gem"gimei"
   # 自動デプロイのためツールCapistrano導入
   gem 'capistrano'
   gem 'capistrano-rbenv'
