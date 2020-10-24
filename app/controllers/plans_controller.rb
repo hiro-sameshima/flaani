@@ -9,6 +9,7 @@ class PlansController < ApplicationController
     if @plan.valid?
       pay_item
       @plan.save # バリデーションをクリアした時
+      NotificationMailer.send_confirm_to_user(@plan).deliver
       redirect_to root_path
     else
       render 'index' # バリデーションに弾かれた時
