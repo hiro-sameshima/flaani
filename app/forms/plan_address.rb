@@ -9,15 +9,19 @@ class PlanAddress
     validates :price
     # 「住所」の郵便番号に関するバリデーション
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'is invalid. Include hyphen(-)' }
+    validates :city
+    validates :house_number
+    validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'is enter the phone number in 10 or 11 digits, half-width numbers.' }
     # 「金額」に関するバリデーション
     validates :price
   end
   # 「都道府県に関するバリデーション」
   validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
+  # 「配達時間に関するバリデーション」
+  validates :delivery_time_id, numericality: { other_than: 0, message: "can't be blank" }
   def save
     # プランの情報を保存し、「plan」という変数に入れている
     plan = Plan.create(price: price, style: style, dear_person_id: dear_person_id)
-    # params.require(:plan).permit(:price, :style).merge(dear_person_id: @dear_person.id )
 
     payment = Payment.create!(price: price, user_id: user_id)
     address = Address.create!(
