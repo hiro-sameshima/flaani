@@ -49,7 +49,7 @@ Things you may want to cover:
 
 # テーブル設計
 
-## florist テーブル
+## florists テーブル
 
 | Column           | Type    | Options     |
 | ---------------- | ------- | ----------- |
@@ -57,6 +57,30 @@ Things you may want to cover:
 | email            | string  | null: false |
 | password         | string  | null: false |
 
+### Association
+- has_one :shop_address
+
+- has_one_attached :image
+
+## shop_addresses テーブル
+
+| Column           | Type      | Options                        |
+| ---------------- | --------- | ------------------------------ |
+| shop_name        | string    | null: false                    |
+| email            | string    | null: false                    |
+| postal_code      | string    | null: false                    |
+| city             | string    | null: false                    |
+| house_number     | striing   | null: false                    |
+| building_name    | striing   |                                |
+| phone_number     | striing   | null: false                    |
+| prefecture_id    | integer   | null: false                    |
+| delivery_time_id | integer   | null: false                    |
+| florist_id       | refereces | foreign_key: true, null: false |
+
+### Association
+- belongs_to :florist
+
+- has_one_attached :image
 
 ## users テーブル
 
