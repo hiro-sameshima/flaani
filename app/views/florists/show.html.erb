@@ -1,4 +1,7 @@
 <%= render "shared/second.header"%>
+<%= @florist.shop_name%>
+  <%= image_tag @florist.avatar %>
+
 <% if  @plans.blank? %>
 <% else %>
 <% @plan_address_person.each do |person| %>
