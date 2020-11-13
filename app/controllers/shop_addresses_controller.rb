@@ -7,7 +7,7 @@ class ShopAddressesController < ApplicationController
     @shop_address = ShopAddress.new(shop_address_params)
     if @shop_address.valid?
        @shop_address.save
-       redirect_to  florists_path(@shop_address)
+       redirect_to  florist_path(@shop_address)
     else
         render 'new'
     end

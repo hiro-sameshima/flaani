@@ -23,7 +23,7 @@
       <div class="parameter-box">
         <div class="parameter-title">ショップ名</div>
         <div class="show-parameter">
-        <% if @shop_address.blank? %>
+        <% if @florist.shop_address.blank? %>
         <% else %>
         <%= @florist.shop_address.shop_name %>
         <% end %>
@@ -35,18 +35,15 @@
 
     </div>
       <div class="show-edit-box">
-       <% if florist_signed_in? && current_florist.id == @florist.id %>
-        
-          <% if current_florist.id == @florist.id %>
-        <div class="edit-box">
+        <% if florist_signed_in? && current_florist.id == @florist.id %>
+          <div class="edit-box">
             <%= link_to "情報を編集する",   edit_florist_registration_path(@florist.id), method: :get, class:''%>
-        </div>
-        <div class="edit-box">
+          </div>
+          <div class="edit-box">
             <%= link_to "店舗情報を追加する",     new_florist_shop_address_path(@florist.id), method: :get, class:'' %>
-        <% end %>
-      <% end %>
-      </div>
-      </div>
+          </div>
+       <% end %>
+    </div>
  </div>
 <% if  @plans.blank? %>
 <% else %>

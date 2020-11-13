@@ -7,4 +7,7 @@ class Florist < ApplicationRecord
   has_one_attached :avatar
 
   has_one :shop_address,  dependent: :destroy
+
+  validates :avatar, presence: true
+  validates :name, presence: true
 end

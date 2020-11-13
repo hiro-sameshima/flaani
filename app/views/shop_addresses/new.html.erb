@@ -2,7 +2,7 @@
 <div class="plans-field-new">
   <div class="login-forms">
     <h3 class="info-input-haedline">店舗情報を登録</h3>
-      <%= form_with model:@shop_address, url: florists_shop_addresses_path, local: true do |form| %>
+      <%= form_with model:@shop_address, url: florist_shop_addresses_path, local: true do |form| %>
       <div class=''>
          <%= render 'shared/error_messages', model: @shop_address %>
       <%# 画像登録 %>
