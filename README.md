@@ -74,7 +74,6 @@ Things you may want to cover:
 | building_name    | striing   |                                |
 | phone_number     | striing   | null: false                    |
 | prefecture_id    | integer   | null: false                    |
-| delivery_time_id | integer   | null: false                    |
 | florist_id       | refereces | foreign_key: true, null: false |
 
 ### Association
