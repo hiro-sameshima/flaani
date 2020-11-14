@@ -55,6 +55,21 @@
         </div>
       </div>
 
+      <div class="parameter-box">
+        <div class="parameter-title">担当フローリスト</div>
+        <div class="show-parameter">
+
+        <% if @plans.blank? %><%#すべてのプランが空だったとき%>
+          <%= link_to 'プランを決める', dear_person_plans_path(@dear_person.id), method: :get, class:''%>
+        <% elsif @person_plan == nil %>
+          <%= link_to 'プランを決める', dear_person_plans_path(@dear_person.id), method: :get, class:''%>
+        <% else %>
+        <%= @person_plan.style%>
+        <% end %>
+
+        </div>
+      </div>
+
 
     </div>
       <div class="show-edit-box">

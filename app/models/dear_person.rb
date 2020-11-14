@@ -1,5 +1,6 @@
 class DearPerson < ApplicationRecord
   belongs_to :user  # usersテーブルとのアソシエーション
+  belongs_to :florist # floristテーブルとのアソシエーション
   has_one_attached :image # 各画像と1対1で結びつける
   has_one :plan, dependent: :destroy
   has_one :address, dependent: :destroy

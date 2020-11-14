@@ -32,7 +32,6 @@
         </div>
       </div>
 
-
     </div>
       <div class="show-edit-box">
         <% if florist_signed_in? && current_florist.id == @florist.id %>
@@ -41,6 +40,9 @@
           </div>
           <div class="edit-box">
             <%= link_to "店舗情報を追加する",     new_florist_shop_address_path(@florist.id), method: :get, class:'' %>
+          </div>
+          <div class="edit-box">
+            <%= link_to "ブーケを投稿する",     new_florist_bouquet_path(@florist.id), method: :get, class:'' %>
           </div>
        <% end %>
     </div>

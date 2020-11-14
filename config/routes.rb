@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :florists, only: [:edit,:show]
   resources :florist do
     resources :shop_addresses
+    resources :bouquets
   end
 
   devise_for :users, controllers: {

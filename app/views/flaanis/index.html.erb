@@ -84,7 +84,7 @@
     <%= link_to florist_path(florist.id) do %>
     <div class="one-florist">
       <div class="florist-image">
-        <%= image_tag florist.avatar , :size =>'250x300' %>
+        <%= image_tag florist.avatar , :size =>'240x320' %>
       </div>
       <div class="content-text-box2">
         <%= florist.name %>
@@ -98,18 +98,26 @@
 
 <%# トップミドル部分 %>
 <div class="flower-area">
+
   <div class="top-contents-images2">
+  <% @bouquets.each do |bouquet| %>
+   <%= link_to  florist_bouquet_path(bouquet.florist.id,bouquet.id ) do %>
+   
     <div class="top-content-container2">
     <div class="top-content-image-box">
-      <%= image_tag asset_path('flower-img1.png') %>
+      <%= image_tag bouquet.image, :size =>'300x200' %>
     </div>
       <div class="content-text-box2">
-      <h5>CUTE</h5>
+      
+       <%= bouquet.style %>
       <p>
         Daliah「熱唱」とテナチュールを使い大人っぽさの中にある可愛さを表現しました<br>
       </p>
     </div>
   </div>
+      <% end %>
+    <% end %>
+
   <div class="top-contents-images2">
     <div class="top-content-container2">
       <div class="top-content-image-box">
@@ -307,7 +315,6 @@
   </div>
 
 </div><%#flower部分の大枠%>
-
 
 <%= render "shared/footer.html.erb"%>
 

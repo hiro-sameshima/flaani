@@ -58,6 +58,8 @@ Things you may want to cover:
 | password         | string  | null: false |
 
 ### Association
+- has_many :dear_persons
+- has_many :bouqets
 - has_one :shop_address
 
 - has_one_attached :image
@@ -78,8 +80,22 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :florist
-
 - has_one_attached :image
+
+## bouquets テーブル
+
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| style      | string     | null: false                    |
+| commentary | string     | null: false                    |
+| florist_id | references | foreign_key: true, null: false |
+
+
+### Association
+
+- belongs_to :florist
+- has_one_attached :image
+
 
 ## users テーブル
 
@@ -107,11 +123,13 @@ Things you may want to cover:
 | last_name_kana   | string     | null: false                    |
 | birthday         | date       | null: false                    |
 | anniversary      | date       | null: false                    |
+| advisor_florist  | integer    |                                |
 | user_id          | references | foreign_key: true, null: false |
 
 ### Association
 
 - belongs_to :user
+- belongs_to :florist
 - has_one :payment
 - has_one_attached :image
 
