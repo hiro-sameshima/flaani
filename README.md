@@ -58,7 +58,6 @@ Things you may want to cover:
 | password         | string  | null: false |
 
 ### Association
-- has_many :dear_persons
 - has_many :bouqets
 - has_one :shop_address
 
@@ -129,7 +128,7 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- belongs_to :florist
+- has_one : advisor_florist
 - has_one :payment
 - has_one_attached :image
 
@@ -159,9 +158,17 @@ Things you may want to cover:
 
 ### Association
 
+
+##  advisor_florists テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------  | ------------------------------ |
+| ad_florist   | string     | null: false                    |
+| dear_person  | refereces  | foreign_key: true, null: false |
+
+### Association
+
 - belongs_to :dear_person
-- belongs_to :plan
-- belongs_to :address
 
 
 ## addresses テーブル

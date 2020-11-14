@@ -4,7 +4,6 @@ class Florist < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :dear_persons
   has_many :bouquets
   has_one_attached :avatar
   has_one :shop_address,  dependent: :destroy
