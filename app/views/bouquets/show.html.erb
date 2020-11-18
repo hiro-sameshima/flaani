@@ -1,0 +1,34 @@
+<%= render "shared/second.header"%>
+<div class="show-contents">
+<div class="show-image-box">
+
+       <%= image_tag @bouquet.image, :size =>'600x400' %>
+    </div>
+    <div class="show-parameters-box">
+
+      <div class="parameter-box">
+        <div class="parameter-title">スタイル</div>
+        <div class="show-parameter">
+        <%= @bouquet.style %>
+        </div>
+      </div>
+
+      <div class="parameter-box">
+        <div class="parameter-title">コメント</div>
+        <div class="show-parameter">
+        <%= @bouquet.commentary %>
+        </div>
+      </div>
+
+      <div class="parameter-box">
+        <div class="parameter-title">Florist</div>
+        <div class="show-parameter">
+        <%= link_to florist_path(@florist.id) do %>
+        <%= @bouquet.florist[:name] %>
+        <% end %>
+        </div>
+      </div>
+      
+
+        </div>
+      </div>

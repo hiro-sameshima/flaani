@@ -62,7 +62,7 @@ a {
     position: absolute;
     top: 480px;
     left: 160px;
-    color :rgb(80,80,80);
+    color :#333;
   }
   h3 {
     top: 300px;
@@ -103,13 +103,13 @@ a {
   .top-content-container {
     margin: 32px 12px;
     border-radius: 8px;
-    width: 460px;
+    width: 380px;
     height: 432px;
     background-color: #FFFF;
     border:  1px solid lightgray;
     box-shadow: 8px 8px 8px rgba(0,0,0,0.1);
     img {
-      width: 460px;
+      width: 380px;
       height: 280px;
       border-radius: 4px;
     }
@@ -187,11 +187,11 @@ a {
     }
     h3{
       text-align: center;
-      font-size: 3em;
+      font-size: 2em;
     }
     .style-Description {
       text-align: center;
-      font-size: 32px;
+      font-size: 24px;
     }
     .style-container{
       display: flex;
@@ -261,37 +261,104 @@ a {
     margin-bottom: 32px;
   }
 
-  // flower紹介部分
-  .top-contents-images2 {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    .top-content-container2 {
-      margin: 16px 12px;
-      border-radius: 8px;
-      width: 300px;
-      height: 280px;
-      background-color: #FFFF;
-      img {
-        border-radius: 4px;
-        transition-duration: 0.5s;
-      }
-      .content-text-box2 {
-        padding: 8px 16px;
-      }
-      h5 {
-        font-size: 16px;
-        font-weight: bold;
-      }
-      p {
-        font-size: 12px;
-      }
+  // florist紹介部分
+  .florist-contents {
+    height: 550px;
+    .top-contents-title{
+      text-align: center;
+      height: 90px;
+      font-size: 32px;
+      font-weight: bold;
     }
+    p {
+      text-align: center;
+      font-size: 24px;
+    }
+    .florist-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 80px 0;
+      margin: 0 16px;
+    }
+    .one-florist {
+      width: 240px;
+      height: 400px;
+      margin: 16px;
+    }
+    .content-text-box2 {
+      color: rgb(80,80,80);
+    }
+  }//end-florist
+
+  .florist-image :hover {
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+    opacity: 0.95;
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.2);
+  }
+  // バックグラウンド部分
+  .background-space3 {
+    height: 400px;
+    background-image: image-url("background-imag3.png");
+    background-position: center;
+    background-color: bisque;
+    background-size: cover;
+    opacity: 0.8;
+    background-attachment: fixed;
+    margin: 88px 0 64px;
   }
 
-  .top-content-image-box :hover {
+
+  // flower紹介部分
+  .flower-area {
+    height: 1000px;
+    margin: 240px 0;
+    .top-contents-title {
+      text-align: center;
+      height: 90px;
+      font-size: 32px;
+      font-weight: bold;
+    }
+    p {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 32px;
+      color: rgb(80,80,80);
+    }
+    }
+    .top-contents-images2 {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      .top-content-container2 {
+        margin: 16px 12px;
+        border-radius: 8px;
+        width: 300px;
+        height: 280px;
+        background-color: #FFFF;
+        img {
+          border-radius: 4px;
+          transition-duration: 0.5s;
+        }
+        .content-text-box2 {
+          padding: 8px 16px;
+        }
+        h5 {
+          font-size: 16px;
+          font-weight: bold;
+          color: rgb(80,80,80);
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  
+    
+    .top-content-image-box :hover {
     transform: scale(1.02);
     transition-duration: 0.5s;
     opacity: 0.95;

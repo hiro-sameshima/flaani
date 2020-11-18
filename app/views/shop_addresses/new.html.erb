@@ -1,0 +1,114 @@
+<%= render "shared/second.header"%>
+<div class="plans-field-new">
+  <div class="login-forms">
+    <h3 class="info-input-haedline">店舗情報を登録</h3>
+      <%= form_with model:@shop_address, url: florist_shop_addresses_path, local: true do |form| %>
+      <div class=''>
+         <%= render 'shared/error_messages', model: @shop_address %>
+      <%# 画像登録 %>
+      <div class="one-input-parts">
+        <div class="field">
+        大切な人の写真
+        <span class="">必須</span>
+        </div>
+      <div class="">
+        <div class="text">
+          クリックしてファイルをアップロード
+        </div>
+        <%= form.file_field :image, id:"item-image" %>
+      </div>
+  </div>
+    <%# /画像 %>
+ <%# １つのフォーム始まり %>
+  <div class="one-input-parts">
+    <div class="field">
+     <% form.label :shop_name %>
+      店舗名を入力してください
+      <span class="indispensable">必須</span>
+    </div> 
+    <%= form.text_field :shop_name, placeholder: "店舗名" %>
+  </div>
+  <%# １つのフォーム終わり %>
+
+ <%# １つのフォーム始まり %>
+  <div class="one-input-parts">
+    <div class="field">
+     <% form.label :email %>
+      E-mailを入力してください
+      <span class="indispensable">必須</span>
+    </div> 
+    <%= form.email_field :email, placeholder: "flower@coom" %>
+  </div>
+  <%# １つのフォーム終わり %>
+
+ <%# １つのフォーム始まり %>
+  <div class="one-input-parts">
+    <div class="field">
+     <% form.label :postal_code %>
+      郵便番号(-含む)
+      <span class="indispensable">必須</span>
+    </div> 
+    <%= form.text_field :postal_code, placeholder: "123-4567" %>
+  </div>
+  <%# １つのフォーム終わり %>
+
+ <%# １つのフォーム始まり %>
+ <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">都道府県</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= form.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: '----' }, {class:"select-box", id:"item-prefecture"}) %>
+      </div>
+  <%# １つのフォーム終わり %>
+
+ <%# １つのフォーム始まり %>
+  <div class="one-input-parts">
+    <div class="field">
+     <% form.label :city %>
+    市区町村
+      <span class="indispensable">必須</span>
+    </div> 
+    <%= form.text_field :city, placeholder: "例）横浜市緑区" %>
+  </div>
+  <%# １つのフォーム終わり %>
+
+ <%# １つのフォーム始まり %>
+  <div class="one-input-parts">
+    <div class="field">
+     <% form.label :house_number %>
+    番地
+      <span class="indispensable">必須</span>
+    </div> 
+    <%= form.text_field :house_number, placeholder: "例）青山1-1" %>
+  </div>
+  <%# １つのフォーム終わり %>
+
+ <%# １つのフォーム始まり %>
+  <div class="one-input-parts">
+    <div class="field">
+     <% form.label :building_name %>
+    ビル・建物名
+      <span class="indispensable">必須</span>
+    </div> 
+    <%= form.text_field :building_name, placeholder: "例）柳ビル" %>
+  </div>
+  <%# １つのフォーム終わり %>
+
+ <%# １つのフォーム始まり %>
+  <div class="one-input-parts">
+    <div class="field">
+     <% form.label :phone_number %>
+    電話番号
+      <span class="indispensable">必須</span>
+    </div> 
+    <%= form.text_field :phone_number, placeholder: "例）09012345678" %>
+  </div>
+  <%# １つのフォーム終わり %>
+  
+    <%= form.submit "登録" ,class:"btn" %>
+  </div>
+  <% end %>
+  </div>
+</div>
+<%= render "shared/second.footer"%>

@@ -58,6 +58,7 @@ Things you may want to cover:
 | password         | string  | null: false |
 
 ### Association
+- has_many :bouqets
 - has_one :shop_address
 
 - has_one_attached :image
@@ -74,13 +75,26 @@ Things you may want to cover:
 | building_name    | striing   |                                |
 | phone_number     | striing   | null: false                    |
 | prefecture_id    | integer   | null: false                    |
-| delivery_time_id | integer   | null: false                    |
 | florist_id       | refereces | foreign_key: true, null: false |
 
 ### Association
 - belongs_to :florist
-
 - has_one_attached :image
+
+## bouquets テーブル
+
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| style      | string     | null: false                    |
+| commentary | string     | null: false                    |
+| florist_id | references | foreign_key: true, null: false |
+
+
+### Association
+
+- belongs_to :florist
+- has_one_attached :image
+
 
 ## users テーブル
 
@@ -108,11 +122,13 @@ Things you may want to cover:
 | last_name_kana   | string     | null: false                    |
 | birthday         | date       | null: false                    |
 | anniversary      | date       | null: false                    |
+| advisor_florist  | integer    |                                |
 | user_id          | references | foreign_key: true, null: false |
 
 ### Association
 
 - belongs_to :user
+- has_one : advisor_florist
 - has_one :payment
 - has_one_attached :image
 
@@ -142,9 +158,18 @@ Things you may want to cover:
 
 ### Association
 
+
+##  favorites テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------  | ------------------------------ |
+| florist      | refereces  | foreign_key: true,             |
+| dear_person  | refereces  | foreign_key: true,             |
+
+### Association
+
 - belongs_to :dear_person
-- belongs_to :plan
-- belongs_to :address
+- belongs_to :florist
 
 
 ## addresses テーブル

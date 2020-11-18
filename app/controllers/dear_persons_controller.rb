@@ -5,31 +5,36 @@ class DearPersonsController < ApplicationController
     @user = User.find(current_user[:id])
     @plans = Plan.all
   end
-
+  
   def new
     @dear_person = DearPerson.new
   end
-
+  
   def create
     @dear_person = DearPerson.new(dear_person_params)
     if @dear_person.valid?
-
+      
       @dear_person.save # バリデーションをクリアした時
       redirect_to  dear_person_path(@dear_person)
     else
       render 'new' # バリデーションに弾かれた時
     end
   end
-
+  
   def show
     @dear_person = DearPerson.find(params[:id])
-    @plans = Plan.all
     @person_plan = nil
+    @plans = Plan.all
     @plans.each do |plan|
       break @person_plan = plan if plan.dear_person_id == @dear_person.id
     end
+    @favorite = nil
+    @favorites = Favorite.all
+      @favorites.each do |favorite|
+        break @favorite = favorite if favorite.dear_person_id == @dear_person.id
+      end
   end
-
+  
   def edit
     @dear_person = DearPerson.find(params[:id])
   end

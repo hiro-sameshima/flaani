@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_22_030529) do
+ActiveRecord::Schema.define(version: 2020_11_14_085618) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 2020_10_22_030529) do
     t.index ["dear_person_id"], name: "index_addresses_on_dear_person_id"
   end
 
+  create_table "bouquets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "style", null: false
+    t.text "commentary", null: false
+    t.bigint "florist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["florist_id"], name: "index_bouquets_on_florist_id"
+  end
+
   create_table "dear_people", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nick_name", null: false
     t.string "family_name", null: false
@@ -61,8 +70,18 @@ ActiveRecord::Schema.define(version: 2020_10_22_030529) do
     t.index ["user_id"], name: "index_dear_people_on_user_id"
   end
 
+  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "florist_id", null: false
+    t.bigint "dear_person_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dear_person_id"], name: "index_favorites_on_dear_person_id"
+    t.index ["florist_id", "dear_person_id"], name: "index_favorites_on_florist_id_and_dear_person_id", unique: true
+    t.index ["florist_id"], name: "index_favorites_on_florist_id"
+  end
+
   create_table "florists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "shop_name", null: false
+    t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -98,6 +117,21 @@ ActiveRecord::Schema.define(version: 2020_10_22_030529) do
     t.index ["dear_person_id"], name: "index_plans_on_dear_person_id"
   end
 
+  create_table "shop_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "shop_name", null: false
+    t.string "email", null: false
+    t.string "postal_code", null: false
+    t.string "city", null: false
+    t.string "house_number", null: false
+    t.string "building_name"
+    t.string "phone_number", null: false
+    t.integer "prefecture_id", null: false
+    t.bigint "florist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["florist_id"], name: "index_shop_addresses_on_florist_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -113,7 +147,11 @@ ActiveRecord::Schema.define(version: 2020_10_22_030529) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "dear_people"
+  add_foreign_key "bouquets", "florists"
   add_foreign_key "dear_people", "users"
+  add_foreign_key "favorites", "dear_people"
+  add_foreign_key "favorites", "florists"
   add_foreign_key "payments", "users"
   add_foreign_key "plans", "dear_people"
+  add_foreign_key "shop_addresses", "florists"
 end

@@ -1,7 +1,7 @@
  <%= render "shared/second.header"%>
  <div class="show-contents">
     <div class="show-image-box">
-      <%= image_tag @dear_person.image ,size:'500x500',class:"" %>
+      <%= image_tag @dear_person.image ,size:'400x500',class:"" %>
     </div>
     <div class="show-parameters-box">
 
@@ -50,6 +50,21 @@
           <%= link_to 'プランを決める', dear_person_plans_path(@dear_person.id), method: :get, class:''%>
         <% else %>
         <%= @person_plan.style%>
+        <% end %>
+
+        </div>
+      </div>
+
+      <div class="parameter-box">
+        <div class="parameter-title">担当フローリスト</div>
+        <div class="show-parameter">
+
+        <% if @favorite.blank? %><%#すべての favorite_floristが空だったとき%>
+          <%= link_to '専属のフローリストを決める',new_dear_person_favorite_path(@dear_person.id), method: :get, class:''%>
+        <% elsif @favorite == nil %>
+          <%= link_to '専属のフローリストを決める',new_dear_person_favorite_path(@dear_person.id), method: :get, class:''%>
+        <% else %>
+        <%= @favorite.florist.name%>
         <% end %>
 
         </div>

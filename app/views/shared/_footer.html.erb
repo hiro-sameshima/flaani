@@ -11,9 +11,9 @@
         <li>お問い合わせ</li>
         <% if  florist_signed_in?%>
         <li> <%= link_to "ログアウト", destroy_florist_session_path, method: :delete,class: 'link-font-color' %></li>
-        <li><i class="fas fa-user"></i><%= link_to "#{current_florist.shop_name}としてログインしています",   florists_show_path(current_florist[:id]), method: :get, class: "link-font-color" %></li>
+        <li><i class="fas fa-user"></i><%= link_to "#{current_florist.name}としてログインしています",   florist_path(current_florist[:id]), method: :get, class: "link-font-color" %></li>
         <% else %>
-        <li> <%= link_to "加盟店としてログインする", new_florist_session_path, method: :get,class: '' %></li>
+        <li> <%= link_to "加盟店としてログインする",  new_florist_session_path, method: :get,class: '' %></li>
         <li> <%= link_to "加盟店として登録する",  new_florist_registration_path, method: :get,class: '' %></li>
         <% end %>
       </ul>    
