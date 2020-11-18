@@ -19,6 +19,15 @@
         <%= @bouquet.commentary %>
         </div>
       </div>
+
+      <div class="parameter-box">
+        <div class="parameter-title">Florist</div>
+        <div class="show-parameter">
+        <%= link_to florist_path(@florist.id) do %>
+        <%= @bouquet.florist[:name] %>
+        <% end %>
+        </div>
+      </div>
       
 
         </div>

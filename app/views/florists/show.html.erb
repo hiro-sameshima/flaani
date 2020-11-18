@@ -44,138 +44,136 @@
           <div class="edit-box">
             <%= link_to "ブーケを投稿する",     new_florist_bouquet_path(@florist.id), method: :get, class:'' %>
           </div>
+          <h2>Orders</h2>
+          <% @get_plan_favorite.each do |pap|%>
+          <ul>
+            <li class="order-parameter">
+            <div class="order-parameter-box">
+              <div class="order-parameter-title">
+                <%="注文番号"%>
+              </div>
+              <div class="order-parameter-value">
+                <%=pap.plan.id %>
+              </div>
+            </div>
+
+            <div class="order-parameter-box">
+              <div class="order-parameter-title">
+                <%="配達日"%>
+              </div>
+              <div class="order-parameter-value">
+                <%= "#{pap.anniversary.month}月#{pap.anniversary.day}日" %>
+              </div>
+            </div>
+
+            <div class="order-parameter-box">
+              <div class="order-parameter-title">
+                <%=pap.family_name_kana%>
+              </div>
+              <div class="order-parameter-value">
+                <%=pap.family_name%>
+              </div>
+            </div>
+
+            <div class="order-parameter-box">
+              <div class="order-parameter-title">
+                <%=pap.last_name_kana%>
+              </div>
+              <div class="order-parameter-value">
+                <%=pap.last_name%>
+              </div>
+            </div>
+
+            <div class="order-parameter-box">
+              <div class="order-parameter-title">
+                <%="スタイル"%>
+              </div>
+              <div class="order-parameter-value">
+                <%=pap.plan.style%>
+              </div>
+            </div>
+
+            <div class="order-parameter-box">
+              <div class="order-parameter-title">
+                <%="金額"%>
+              </div>
+              <div class="order-parameter-value">
+                <%=pap.plan.price%>
+              </div>
+            </div>
+
+            <div class="order-parameter-box">
+              <div class="order-parameter-title">
+                <%="郵便番号"%>
+              </div>
+              <div class="order-parameter-value">
+                <%=pap.address.postal_code%>
+              </div>
+            </div>
+
+            <div class="order-parameter-box">
+              <div class="order-parameter-title">
+                <%="都道府県"%>
+              </div>
+              <div class="order-parameter-value">
+                <%=pap.address.prefecture.name%>
+              </div>
+            </div>
+
+            <div class="order-parameter-box">
+              <div class="order-parameter-title">
+                <%="市区町村"%>
+              </div>
+              <div class="order-parameter-value">
+                <%=pap.address.city%>
+              </div>
+            </div>
+
+            <div class="order-parameter-box">
+              <div class="order-parameter-title">
+                <%="番地"%>
+              </div>
+              <div class="order-parameter-value">
+                <%=pap.address.house_number%>
+              </div>
+            </div>
+
+            <div class="order-parameter-box">
+              <div class="order-parameter-title">
+                <%="ビル・建物名"%>
+              </div>
+              <div class="order-parameter-value">
+              <% if pap.address.building_name == blank? %>
+              登録なし
+                <% else %>
+                <%=pap.address.building_name%>
+              <% end %>
+              </div>
+            </div>
+
+            <div class="order-parameter-box">
+              <div class="order-parameter-title">
+                <%="電話番号"%>
+              </div>
+              <div class="order-parameter-value">
+                <%=pap.address.phone_number%>
+              </div>
+            </div>
+
+            <div class="order-parameter-box">
+              <div class="order-parameter-title">
+                <%="配達時間"%>
+              </div>
+              <div class="order-parameter-value">
+                <%=pap.address.delivery_time.name%>
+              </div>
+            </div>
+            </li>
+          </ul>
+  <% end %>
        <% end %>
     </div>
  </div>
-<% if  @plans.blank? %>
-<% else %>
-<% @plan_address_person.each do |person| %>
-<ul>
-  <li class="order-parameter">
-    <div class="order-parameter-box">
-      <div class="order-parameter-title">
-        <%="注文番号"%>
-      </div>
-      <div class="order-parameter-value">
-        <%=person.plan.id %>
-      </div>
-    </div>
 
-    <div class="order-parameter-box">
-      <div class="order-parameter-title">
-        <%="配達日"%>
-      </div>
-      <div class="order-parameter-value">
-        <%= "#{person.anniversary.month}月#{person.anniversary.day}日" %>
-      </div>
-    </div>
-
-    <div class="order-parameter-box">
-      <div class="order-parameter-title">
-        <%=person.family_name_kana%>
-      </div>
-      <div class="order-parameter-value">
-        <%=person.family_name%>
-      </div>
-    </div>
-
-    <div class="order-parameter-box">
-      <div class="order-parameter-title">
-        <%=person.last_name_kana%>
-      </div>
-      <div class="order-parameter-value">
-        <%=person.last_name%>
-      </div>
-    </div>
-
-    <div class="order-parameter-box">
-      <div class="order-parameter-title">
-        <%="スタイル"%>
-      </div>
-      <div class="order-parameter-value">
-        <%=person.plan.style%>
-      </div>
-    </div>
-
-    <div class="order-parameter-box">
-      <div class="order-parameter-title">
-        <%="金額"%>
-      </div>
-      <div class="order-parameter-value">
-        <%=person.plan.price%>
-      </div>
-    </div>
-
-    <div class="order-parameter-box">
-      <div class="order-parameter-title">
-        <%="郵便番号"%>
-      </div>
-      <div class="order-parameter-value">
-        <%=person.address.postal_code%>
-      </div>
-    </div>
-
-    <div class="order-parameter-box">
-      <div class="order-parameter-title">
-        <%="都道府県"%>
-      </div>
-      <div class="order-parameter-value">
-        <%=person.address.prefecture.name%>
-      </div>
-    </div>
-
-    <div class="order-parameter-box">
-      <div class="order-parameter-title">
-        <%="市区町村"%>
-      </div>
-      <div class="order-parameter-value">
-        <%=person.address.city%>
-      </div>
-    </div>
-
-    <div class="order-parameter-box">
-      <div class="order-parameter-title">
-        <%="番地"%>
-      </div>
-      <div class="order-parameter-value">
-        <%=person.address.house_number%>
-      </div>
-    </div>
-
-    <div class="order-parameter-box">
-      <div class="order-parameter-title">
-        <%="ビル・建物名"%>
-      </div>
-      <div class="order-parameter-value">
-      <% if person.address.building_name == blank? %>
-      登録なし
-        <% else %>
-        <%=person.address.building_name%>
-      <% end %>
-      </div>
-    </div>
-
-    <div class="order-parameter-box">
-      <div class="order-parameter-title">
-        <%="電話番号"%>
-      </div>
-      <div class="order-parameter-value">
-        <%=person.address.phone_number%>
-      </div>
-    </div>
-
-    <div class="order-parameter-box">
-      <div class="order-parameter-title">
-        <%="配達時間"%>
-      </div>
-      <div class="order-parameter-value">
-        <%=person.address.delivery_time.name%>
-      </div>
-    </div>
-
-  </li>
-</ul>
-<% end %>
-<% end %>
 
 <%= render "shared/second.footer"%>

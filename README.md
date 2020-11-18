@@ -159,16 +159,17 @@ Things you may want to cover:
 ### Association
 
 
-##  advisor_florists テーブル
+##  favorites テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------  | ------------------------------ |
-| ad_florist   | string     | null: false                    |
-| dear_person  | refereces  | foreign_key: true, null: false |
+| florist      | refereces  | foreign_key: true,             |
+| dear_person  | refereces  | foreign_key: true,             |
 
 ### Association
 
 - belongs_to :dear_person
+- belongs_to :florist
 
 
 ## addresses テーブル

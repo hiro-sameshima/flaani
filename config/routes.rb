@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   resources :shop_address
   resources :dear_persons do
     resources :plans
+    resources :favorites, only: [:new,:edit,:create]
   end
 end

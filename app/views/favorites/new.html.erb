@@ -1,0 +1,39 @@
+<%= render "shared/second.header"%>
+<div class="plans-field plans-field-new">
+  <div class="login-forms">
+    <p class="info-input-haedline">投稿</p>
+    <%= form_with(url: dear_person_favorites_path,local: true) do |f| %>
+
+      <%# エラー表示 %>
+       <%= render 'shared/error_messages', model: @favorite %>
+      <%# プランテーブル部分 %>
+
+  <%= f.label :florist_id %>
+  <%= f.collection_select :florist_id, Florist.all, :id, :name %>
+
+<div class="actions">
+        <%= f.submit "登録", class:"btn" %>
+      </div>
+<% end %>
+  </div>
+</div>
+
+<%# 登録フローリスト部分 %>
+<div class="florist-contents">
+  <div class="florist-list">
+    <% @florists.each do |florist| %>
+    <%= link_to florist_path(florist.id) do %>
+    <div class="one-florist">
+      <div class="florist-image">
+        <%= image_tag florist.avatar , :size =>'240x320' %>
+      </div>
+      <div class="content-text-box2">
+        <%= florist.name %>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+<%# end登録フローリスト部分 %>
+<%= render "shared/second.footer" %>

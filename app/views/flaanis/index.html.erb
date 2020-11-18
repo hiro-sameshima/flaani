@@ -79,6 +79,9 @@
 
 <%# 登録フローリスト部分 %>
 <div class="florist-contents">
+ <h3 class='top-contents-title'>Florists</h3>
+  <p>登録されたフローリスト達、あなたの大切な人の専属として登録できます。<br>プレゼントの制作をお気に入りのフローリストに任せてみてはいかがでしょうか
+  </p>
   <div class="florist-list">
     <% @florists.each do |florist| %>
     <%= link_to florist_path(florist.id) do %>
@@ -96,9 +99,16 @@
 </div>
 <%# end登録フローリスト部分 %>
 
+<%# バックグラウンド部分 %>
+<div class="background-space3">
+</div>
+<%# endバックグラウンド部分 %>
+
 <%# トップミドル部分 %>
 <div class="flower-area">
-
+ <h3 class='top-contents-title'>Bouquet</h3>
+  <p>フローリストが制作したブーケです。<br>気に入ったブーケを制作したフローリストをチェックしましょう。
+        </p>
   <div class="top-contents-images2">
   <% @bouquets.each do |bouquet| %>
    <%= link_to  florist_bouquet_path(bouquet.florist.id,bouquet.id ) do %>
@@ -108,16 +118,17 @@
       <%= image_tag bouquet.image, :size =>'300x200' %>
     </div>
       <div class="content-text-box2">
-      
+      <h5>
        <%= bouquet.style %>
+      </h5>
       <p>
-        Daliah「熱唱」とテナチュールを使い大人っぽさの中にある可愛さを表現しました<br>
+       <%= bouquet.commentary %>
       </p>
     </div>
   </div>
       <% end %>
     <% end %>
-
+<% if  @bouquets.nil? %>
   <div class="top-contents-images2">
     <div class="top-content-container2">
       <div class="top-content-image-box">
@@ -315,6 +326,6 @@
   </div>
 
 </div><%#flower部分の大枠%>
-
+<% end %>
 <%= render "shared/footer.html.erb"%>
 

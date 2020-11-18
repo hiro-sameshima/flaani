@@ -23,11 +23,16 @@ class DearPersonsController < ApplicationController
   
   def show
     @dear_person = DearPerson.find(params[:id])
-    @plans = Plan.all
     @person_plan = nil
+    @plans = Plan.all
     @plans.each do |plan|
       break @person_plan = plan if plan.dear_person_id == @dear_person.id
     end
+    @favorite = nil
+    @favorites = Favorite.all
+      @favorites.each do |favorite|
+        break @favorite = favorite if favorite.dear_person_id == @dear_person.id
+      end
   end
   
   def edit

@@ -59,12 +59,12 @@
         <div class="parameter-title">担当フローリスト</div>
         <div class="show-parameter">
 
-        <% if @plans.blank? %><%#すべてのプランが空だったとき%>
-          <%= link_to 'プランを決める', dear_person_plans_path(@dear_person.id), method: :get, class:''%>
-        <% elsif @person_plan == nil %>
-          <%= link_to 'プランを決める', dear_person_plans_path(@dear_person.id), method: :get, class:''%>
+        <% if @favorite.blank? %><%#すべての favorite_floristが空だったとき%>
+          <%= link_to '専属のフローリストを決める',new_dear_person_favorite_path(@dear_person.id), method: :get, class:''%>
+        <% elsif @favorite == nil %>
+          <%= link_to '専属のフローリストを決める',new_dear_person_favorite_path(@dear_person.id), method: :get, class:''%>
         <% else %>
-        <%= @person_plan.style%>
+        <%= @favorite.florist.name%>
         <% end %>
 
         </div>

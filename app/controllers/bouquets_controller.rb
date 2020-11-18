@@ -15,7 +15,7 @@ class BouquetsController < ApplicationController
 
   def show
     @bouquet = Bouquet.find(params[:id])
-    # @florist = Florist.find(params[:id])
+    @florist = Florist.find(current_florist[:id])
   end
 
   private
