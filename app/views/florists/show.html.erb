@@ -45,8 +45,8 @@
             <%= link_to "ブーケを投稿する",     new_florist_bouquet_path(@florist.id), method: :get, class:'' %>
           </div>
           <h2>Orders</h2>
-          <% @get_plan_favorite.each do |pap|%>
           <ul>
+          <% @get_plan_favorite.each do |pap|%>
             <li class="order-parameter">
             <div class="order-parameter-box">
               <div class="order-parameter-title">
@@ -169,10 +169,10 @@
               </div>
             </div>
             </li>
-          </ul>
   <% end %>
-       <% end %>
+          </ul>
     </div>
+       <% end %>
  </div>
 
 

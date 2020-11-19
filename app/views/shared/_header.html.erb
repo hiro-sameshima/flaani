@@ -3,6 +3,14 @@
             <%= link_to image_tag("logo.png", class:"header-logo"), root_path %>
             <nav class="global-nav">
               <ul>
+               <% if  florist_signed_in?%>
+                  <li> <%= link_to "ログアウト", destroy_florist_session_path, method: :delete,class: 'link-font-color' %></li>
+                  <li><%= link_to "Florist:  #{current_florist.name}",   florist_path(current_florist[:id]), method: :get, class: "link-font-color" %></li>
+                <% else %>
+                  <li> <%= link_to "Floristでログイン",  new_florist_session_path, method: :get,class: '' %></li>
+                  <li> <%= link_to "Floristで登録",  new_florist_registration_path, method: :get,class: '' %></li>
+                <% end %>
+
                 <% if user_signed_in? %><%#ログインしていたら表示される%>
                 <span><li class=".nav-list">
                   <%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class: "nav-list" %>

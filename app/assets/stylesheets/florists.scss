@@ -2,6 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$pc: 1024px; // PC
+$tab: 680px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
 
 // showページのstyle
 h2 {
@@ -12,22 +32,41 @@ h2 {
 
 .order-parameter {
   margin: 0 32px;
-}
-
-.order-parameter-box{
   width: 100%;
   height: 48px;
   background-color: antiquewhite;
   margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .order-parameter-title {
   height: 18px;
-  font-size: 10px;
+  font-size: 1rem;
   background-color: bisque;
 }
 
 .order-parameter-value {
   line-height: 30px;
   font-size: 11px;
+}
+
+.order-parameter{
+  @include tab {
+    margin:  0 16px;
+  };
+  @include sp {
+    margin: 0  0;
+  };
+}
+.order-parameter-title {
+  @include pc {
+    
+  };
+  @include tab {
+    font-size: 8px;
+  };
+  @include sp {
+    font-size: 6px;;
+  };
 }

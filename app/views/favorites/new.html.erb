@@ -1,5 +1,5 @@
 <%= render "shared/second.header"%>
-<div class="plans-field plans-field-new">
+<div class="favorite-field favorite-field-new">
   <div class="login-forms">
     <p class="info-input-haedline">投稿</p>
     <%= form_with(url: dear_person_favorites_path,local: true) do |f| %>
@@ -8,13 +8,13 @@
        <%= render 'shared/error_messages', model: @favorite %>
       <%# プランテーブル部分 %>
 
-  <%= f.label :florist_id %>
-  <%= f.collection_select :florist_id, Florist.all, :id, :name %>
+    <%= f.label :florist_id %>
+    <%= f.collection_select :florist_id, Florist.all, :id, :name %>
 
-<div class="actions">
+      <div class="actions">
         <%= f.submit "登録", class:"btn" %>
       </div>
-<% end %>
+    <% end %>
   </div>
 </div>
 

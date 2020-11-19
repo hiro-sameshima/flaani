@@ -11,7 +11,7 @@
           <% @dear_persons.each do |person| %>
             <% if person.user_id == @user.id %>
                <div class="person-box">
-                    <%= link_to image_tag( person.image,size: '400x400'),dear_person_path(person.id), class:'.dear-person-image'%>
+                    <%= link_to image_tag( person.image,size: '250x300'),dear_person_path(person.id), class:'.dear-person-image'%>
                   <div class="person-list-parameters">
                     <%= person.nick_name%>
                   </div>

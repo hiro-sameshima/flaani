@@ -26,6 +26,7 @@ header{
   }
   ul {
     display: flex;
+    justify-content: right;
     align-items: center;
   }
   li {
@@ -33,10 +34,6 @@ header{
     min-width: 10px;
     font-weight: bolder;
     
-    .fa-search {
-      font-size: large;
-      color: gray;
-    }
     .material-icons {
       font-size: large;
     }
