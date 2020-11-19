@@ -87,9 +87,6 @@ gem 'devise'
 # PAY.JP
 gem 'payjp'
 
-# jquery導入
-gem 'jquery-rails'
-
 #アクティブハッシュ
 gem 'active_hash'
 
